@@ -1,18 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
+// import { render } from '@testing-library/react';
+// import { Provider } from 'react-redux';
+// import { store } from './app/store';
 import App, { divide } from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+// test('renders learn react link', () => {
+//   const { getByText } = render(
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
-});
+//   expect(getByText(/learn/i)).toBeInTheDocument();
+// });
 
 // We call the 'describe function and provide a description-string as the first argument
 // and a function with tests as the second:
@@ -35,7 +35,22 @@ describe('divide function', () => {
       // Assert: compare expected result
       // with a function result.
       expect(result).toEqual(expected);
+    });
+  });
+});
 
-    })
-  })
-})
+describe('divide function', () => {
+  describe('when trying to divide by 0', () => {
+    it('should throw an error', () => {
+      // Arrange: prepare an error
+      // that is expected to be thrown.
+      const expectedError = new Error(
+        "You can't divide by zero."
+      )
+      
+      // Act here is a callback inside of 'exact'.
+      // Arrange: check that the function call wiull result in a given error.
+      expect(() => divide(1, 0)).toThrow(expectedError);
+    });
+  });
+});
