@@ -13,3 +13,14 @@ test('renders learn react link', () => {
 
   expect(getByText(/learn/i)).toBeInTheDocument();
 });
+
+// We call the 'describe function and provide a description-string as the first argument
+// and a function with tests as the second:
+
+describe('divide function', () => {
+  describe('when given to integers', () => {
+    it('should return a division result', () => {
+      
+    })
+  })
+})
