@@ -2,7 +2,7 @@ import React from 'react';
 // import { render } from '@testing-library/react';
 // import { Provider } from 'react-redux';
 // import { store } from './app/store';
-import App, { divide } from './App';
+import App, { divide, label } from './App';
 
 // test('renders learn react link', () => {
 //   const { getByText } = render(
@@ -54,3 +54,8 @@ describe('divide function', () => {
     });
   });
 });
+
+test('generates a label', () => {
+  const result = label(42);
+  expect(result).toEqual('Hello React')
+})
