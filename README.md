@@ -2,4 +2,6 @@
 
 ## Purpose
 
-This project is entented for me to give myself practice writing test, the TypeScript Language, and Redux.  
+This project is entented for me to give myself practice writing tests, the TypeScript Language, and Redux.  
+
+## Tests
