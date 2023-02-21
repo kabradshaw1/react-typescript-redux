@@ -17,7 +17,9 @@ export function divide(a: number, b:number): number {
   return Math.round(a/b);
 }
 
-
+export function label(name: string) {
+  return `Hello ${name.toUpperCase()}`
+}
 
 function App() {
   return (

@@ -56,6 +56,6 @@ describe('divide function', () => {
 });
 
 test('generates a label', () => {
-  const result = label(42);
-  expect(result).toEqual('Hello React')
+  const result = label('React');
+  expect(result).toEqual('Hello React');
 })
