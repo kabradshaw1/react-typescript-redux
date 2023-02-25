@@ -65,4 +65,9 @@ describe('initial component', () => {
     const { getByText } = render(<App/>);
     expect(getByText('People Invited to my Party')).toBeInTheDocument;
   });
+  describe('people should have a defined type with name, url, age, and note properties', () => {
+    test('variable exists', () => {
+      
+    })
+  })
 });

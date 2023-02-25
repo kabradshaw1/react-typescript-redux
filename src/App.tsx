@@ -24,10 +24,29 @@ import Container from 'react-bootstrap/Container'
 
 function App() {
 
+  const [people, setPeople] = useState(
+    [
+      {
+        name: 'LeBron James',
+        url: '',
+        age: 36,
+        note: 'Allergeric to staying on the same team'
+      },
+      {
+        name: 'Kobe Bryant',
+        url: '',
+        age: 35
+      }
+    ]
+  );
+
+  people.map(person => {
+    person.name
+  })
 
   return (
     <Container>
-      
+      <h1>People Invited to my Party</h1>
     </Container>
   );
 }
