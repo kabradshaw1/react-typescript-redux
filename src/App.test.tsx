@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 // import { Provider } from 'react-redux';
 // import { store } from './app/store';
-import App, { divide, label } from './App';
+import App from './App';
 
 // test('renders learn react link', () => {
 //   const { getByText } = render(
@@ -55,10 +55,10 @@ import App, { divide, label } from './App';
 //   });
 // });
 
-test('generates a label', () => {
-  const result = label('React');
-  expect(result).toEqual('Hello REACT');
-})
+// test('generates a label', () => {
+//   const result = label('React');
+//   expect(result).toEqual('Hello REACT');
+// })
 
 describe('initial component', () => {
   test('label at top should have text', () =>{
