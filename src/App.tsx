@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
@@ -18,10 +18,17 @@ export function divide(a: number, b:number): number {
 }
 
 export function label(name: string) {
-  return `Hello ${name.toUpperCase()}`
+  return `${name.toUpperCase()}`
 }
 
 function App() {
+
+  const [number, setNumber] = useState<number | string>(5);
+
+  const changeNumber = () => {
+    setNumber("10");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
