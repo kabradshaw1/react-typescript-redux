@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import Container from 'react-bootstrap/Container'
+import List from './components/List';
 
 // Let's say we need to create a function
 // that should divide number `a` by number `b`
@@ -21,24 +22,17 @@ import Container from 'react-bootstrap/Container'
 // export function label(name: string) {
 //   return `${name.toUpperCase()}`
 // }
-
+interface IState {
+  people: {
+    name: string
+    age: number
+    url: string
+    note?: string
+  }[]
+}
 function App() {
 
-  const [people, setPeople] = useState(
-    [
-      {
-        name: 'LeBron James',
-        url: '',
-        age: 36,
-        note: 'Allergeric to staying on the same team'
-      },
-      {
-        name: 'Kobe Bryant',
-        url: '',
-        age: 35
-      }
-    ]
-  );
+  const [people, setPeople] = useState<IState['people']>([]);
 
   people.map(person => {
     person.name
@@ -47,6 +41,7 @@ function App() {
   return (
     <Container>
       <h1>People Invited to my Party</h1>
+      <List people={people}/>
     </Container>
   );
 }
