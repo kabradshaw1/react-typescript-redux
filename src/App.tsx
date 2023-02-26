@@ -4,6 +4,7 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 import Container from 'react-bootstrap/Container'
 import List from './components/List';
+import AddToList from './components/AddToList';
 
 // Let's say we need to create a function
 // that should divide number `a` by number `b`
@@ -38,6 +39,7 @@ function App() {
     <Container>
       <h1>People Invited to my Party</h1>
       <List people={people}/>
+      <AddToList/>
     </Container>
   );
 }

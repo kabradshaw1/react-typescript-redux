@@ -8,7 +8,8 @@ describe('Should render form', () => {
       const { getByText } = render(<AddToList/>)
       expect(getByText('Name')).toBeInTheDocument;
     })
-    it('has name input', () => {
+    it('has name input that works as expected', () => {
+
       
     })
   })
