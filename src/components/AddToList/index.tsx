@@ -1,22 +1,29 @@
 import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { constants } from 'http2';
+
+type Input = {
+  example: string,
+  exampleRequired: string
+}
 
 const AddToList = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<Input>();
 
-  const onSubmit = (data: React.FormEvent<HTMLFormElement>) => console.log(data);
+  const onSubmit: SubmitHandler<Input> = (data: React.FormEvent<HTMLFormElement>) => console.log(data);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
+        
         <Button type='submit'>Submit</Button>
       </Form.Group>
     </Form>
   )
 }
+
+export default AddToList;
 
 
   // const [input, setInput] = useState({name:"", age: "", note: "", img: ""})
