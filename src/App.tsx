@@ -34,10 +34,6 @@ function App() {
 
   const [people, setPeople] = useState<IState['people']>([]);
 
-  people.map(person => {
-    person.name
-  })
-
   return (
     <Container>
       <h1>People Invited to my Party</h1>
