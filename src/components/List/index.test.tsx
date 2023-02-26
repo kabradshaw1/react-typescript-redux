@@ -9,7 +9,8 @@ describe('component should exist', () => {
         age: 22,
         url: 'http://www.webpage.com'
       }
-    ]
+    ];
     const { getByText } = render(<List people={people}/>);
-  })
-})
+    expect(getByText('I am a list')).toBeInTheDocument;
+  });
+});
