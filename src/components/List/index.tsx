@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 interface IProps {
   people: {
@@ -32,7 +32,6 @@ const List: React.FC<IProps> = ({ people }) => {
     <Container>
       {renderList()}
     </Container>
-    
   )
 };
 
