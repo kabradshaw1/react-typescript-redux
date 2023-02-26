@@ -11,12 +11,16 @@ type Input = {
 const AddToList = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Input>();
 
-  const onSubmit: SubmitHandler<Input> = (data: React.FormEvent<HTMLFormElement>) => console.log(data);
+  const onSubmit: SubmitHandler<Input> = data => console.log(data);
+
+  console.log(watch('example'));
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
-        
+        <Form.Control defaultValue='test' {...register('example')}/>
+        <Form.Control {...register('exampleRequired', { required: true})}/>
+        {errors.exampleRequired && <span>This field is required</span>}
         <Button type='submit'>Submit</Button>
       </Form.Group>
     </Form>
