@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-inerface
+interface formState {
+  value: string[],
+}
 
-const initialState = {
+const initialState: formState = {
   value:[]
 }
 export const formSlice = createSlice({
