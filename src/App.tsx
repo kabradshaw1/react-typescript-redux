@@ -21,13 +21,13 @@ function App() {
   const [people, setPeople] = useState<IState['people']>([]);
 
   return (
-    <Container>
+    <>
       <h1>People Invited to my Party</h1>
       <List people={people}/>
       {form.map(name => {
         <AddToList name={name}/>
       })}
-    </Container>
+    </>
   );
 }
 
