@@ -24,7 +24,9 @@ function App() {
     <Container>
       <h1>People Invited to my Party</h1>
       <List people={people}/>
-      <AddToList name={name}/>
+      {form.map(name => {
+        <AddToList name={name}/>
+      })}
     </Container>
   );
 }

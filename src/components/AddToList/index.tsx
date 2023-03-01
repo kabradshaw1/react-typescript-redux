@@ -24,7 +24,7 @@ const AddToList = ({name}: formTypes) => {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
-        <Form.Label>Name</Form.Label>
+        <Form.Label>{name}</Form.Label>
         <Form.Control defaultValue='test' {...register('example')}/>
         <Form.Label>Age</Form.Label>
         <Form.Control {...register('exampleRequired', { required: true})}/>
