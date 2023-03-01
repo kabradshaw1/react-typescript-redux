@@ -3,7 +3,8 @@ import './App.css';
 import Container from 'react-bootstrap/Container'
 import List from './components/List';
 import AddToList from './components/AddToList';
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
 interface IState {
   people: {
@@ -15,6 +16,8 @@ interface IState {
 }
 function App() {
 
+
+  const form = useSelector((state: RootState) => state.form.value)
   const [people, setPeople] = useState<IState['people']>([]);
 
   return (

@@ -3,12 +3,15 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+
 type Input = {
   example: string,
   exampleRequired: string
 }
 
 const AddToList = () => {
+
+  
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Input>();
 
   const onSubmit: SubmitHandler<Input> = data => console.log(data);
