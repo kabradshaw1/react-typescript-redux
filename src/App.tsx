@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import List from './components/List';
 import AddToList from './components/AddToList';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../app/store';
+import { RootState } from './app/store';
 
 interface IState {
   people: {
@@ -24,7 +24,7 @@ function App() {
     <Container>
       <h1>People Invited to my Party</h1>
       <List people={people}/>
-      <AddToList/>
+      <AddToList name={name}/>
     </Container>
   );
 }

@@ -9,9 +9,12 @@ type Input = {
   exampleRequired: string
 }
 
-const AddToList = () => {
+interface formTypes {
+  name: string
+}
 
-  
+const AddToList = ({name}: formTypes) => {
+
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Input>();
 
   const onSubmit: SubmitHandler<Input> = data => console.log(data);
