@@ -18,23 +18,28 @@ interface IState {
   }[]
 }
 
-type Reservation {
+// type Reservation {
 
-}
+// }
 
 function App() {
   // This is entended to compare how easy it is to use the react-hook-form vs doing it with regular typescript
   const { register, handleSubmit, watch, formState: { errors } } = useForm()
-  
+
   const form = useSelector((state: RootState) => state.form.value)
-  const reservation = useSelector((state: RootState) => state.reservations.value)
+  
   const [people, setPeople] = useState<IState['people']>([]);
 
   // This is using the method that Laith Academy used
   const [reservationNameInput, setReservationNameInput] = useState("")
+
+  const reservation = useSelector((state: RootState) => state.reservations.value)
+
+  const dispatch = useDispatch()
   const handleAddReservations = () => {
     if(!reservationNameInput) return;
-    addReservation()
+    dispatch(addReservation(reservationNameInput));
+    setReservationNameInput("")
   }
 
   return (
@@ -48,11 +53,11 @@ function App() {
         return <ReservationCard name={name}/>
       })}
       <Form>
-        <Form.Group controlId='reservation' onSubmit={(e) => setReservationNameInput(e.target.value)}>
+        <Form.Group controlId='reservation' onSubmit={}>
           <Form.Label>Add Reservation</Form.Label>
-          <Form.Control type='text' placeholder='Enter Name'/>
+          <Form.Control type='text' placeholder='Enter Name' onChange={(e) => setReservationNameInput(e.target.value)}/>
         </Form.Group>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit' onClick={handleAddReservations}>Submit</Button>
       </Form>
     </>
   );
