@@ -32,6 +32,13 @@ function App() {
       {reservation.map(name => {
         return <ReservationCard name={name}/>
       })}
+      <Form>
+        <Form.Group>
+          <Form.Label>Add Reservation</Form.Label>
+          <Form.Control type='text' placeholder='Enter Name'/>
+        </Form.Group>
+        <Button type='submit'>Submit</Button>
+      </Form>
     </>
   );
 }
