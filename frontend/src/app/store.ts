@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import formReducer from '../features/formSlice';
+import reservationReducer from '../features/reservationSlice';
 
 export const store = configureStore({
   reducer: {
-    form: formReducer
+    form: formReducer,
+    reservations: reservationReducer
   },
 });
 

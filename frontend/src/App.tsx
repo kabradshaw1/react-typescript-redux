@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import Container from 'react-bootstrap/Container'
 import List from './components/List';
 import AddToList from './components/AddToList';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store';
+import ReservationCard from './components/ReservationCard';
+
+
 
 interface IState {
   people: {
@@ -18,6 +20,7 @@ function App() {
 
 
   const form = useSelector((state: RootState) => state.form.value)
+  const reservation = useSelector((state: RootState) => state.reservations.value)
   const [people, setPeople] = useState<IState['people']>([]);
 
   return (
@@ -26,6 +29,9 @@ function App() {
       <List people={people}/>
       {form.map(name => {
         <AddToList name={name}/>
+      })}
+      {reservation.map(name => {
+        return <ReservationCard name={name}/>
       })}
     </>
   );
