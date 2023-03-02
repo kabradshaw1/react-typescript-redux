@@ -5,8 +5,7 @@ import AddToList from './components/AddToList';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store';
 import ReservationCard from './components/ReservationCard';
-
-
+import { Form, Button } from 'react-bootstrap';
 
 interface IState {
   people: {
@@ -18,7 +17,7 @@ interface IState {
 }
 function App() {
 
-
+  const [reservationNameInput, setRervationNameInput] = useState("")
   const form = useSelector((state: RootState) => state.form.value)
   const reservation = useSelector((state: RootState) => state.reservations.value)
   const [people, setPeople] = useState<IState['people']>([]);
