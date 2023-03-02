@@ -49,11 +49,11 @@ function App() {
       {form.map(name => {
         <AddToList name={name}/>
       })}
-      {reservation.map(name => {
-        return <ReservationCard name={name}/>
+      {reservation.map((name, index) => {
+        return <ReservationCard name={name} index={index}/>
       })}
       <Form>
-        <Form.Group controlId='reservation' onSubmit={}>
+        <Form.Group controlId='reservation'>
           <Form.Label>Add Reservation</Form.Label>
           <Form.Control type='text' placeholder='Enter Name' onChange={(e) => setReservationNameInput(e.target.value)}/>
         </Form.Group>
