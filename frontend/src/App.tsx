@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import List from './components/List';
 import AddToList from './components/AddToList';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './app/store';
 import ReservationCard from './components/ReservationCard';
 import { Form, Button } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { addReservation } from './features/reservationSlice';
 
 interface IState {
   people: {
@@ -15,12 +17,25 @@ interface IState {
     note?: string
   }[]
 }
-function App() {
 
-  const [reservationNameInput, setRervationNameInput] = useState("")
+type Reservation {
+
+}
+
+function App() {
+  // This is entended to compare how easy it is to use the react-hook-form vs doing it with regular typescript
+  const { register, handleSubmit, watch, formState: { errors } } = useForm()
+  
   const form = useSelector((state: RootState) => state.form.value)
   const reservation = useSelector((state: RootState) => state.reservations.value)
   const [people, setPeople] = useState<IState['people']>([]);
+
+  // This is using the method that Laith Academy used
+  const [reservationNameInput, setReservationNameInput] = useState("")
+  const handleAddReservations = () => {
+    if(!reservationNameInput) return;
+    addReservation()
+  }
 
   return (
     <>
@@ -33,7 +48,7 @@ function App() {
         return <ReservationCard name={name}/>
       })}
       <Form>
-        <Form.Group>
+        <Form.Group controlId='reservation' onSubmit={(e) => setReservationNameInput(e.target.value)}>
           <Form.Label>Add Reservation</Form.Label>
           <Form.Control type='text' placeholder='Enter Name'/>
         </Form.Group>
