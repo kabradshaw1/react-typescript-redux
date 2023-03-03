@@ -10,6 +10,7 @@ interface AddFoodToCustomerPayload {
   food: string;
   id: string
 }
+
 interface CustomerState {
   value: Customer[]
 };
