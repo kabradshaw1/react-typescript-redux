@@ -6,15 +6,15 @@ import { Controller, useForm } from 'react-hook-form';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
 interface FormData {
-  firstName: string
-  age: number
+  firstName: string,
+  age: number,
 }
 
 function App() {
   const { control, handleSubmit, formState:{errors} } = useForm<FormData>({
     defaultValues: {
       firstName: "",
-      age:"",
+      age:0,
     },
   });
 
@@ -49,8 +49,20 @@ function App() {
             name="age"
             control={control}
             rules={{max:30, min: 20}}
-
+            render={({field}) => (
+              <Form.Control 
+                isInvalid={errors.age ? true: undefined} 
+                type="text" {...field} 
+                placeholder="First name"
+              />
+            )}
           />
+          <Form.Control.Feedback type="invalid">
+            Minimum age is 20.
+          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Maximum age is 30
+          </Form.Control.Feedback>
         </Form.Group>
       </Row>
       <Button type="submit">Submit Form</Button>
