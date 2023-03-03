@@ -5,14 +5,18 @@ import {Controller, useForm} from 'react-hook-form';
 // import { RootState } from './app/store';
 import { Form, Button, Row, Col} from 'react-bootstrap';
 
+interface FormData {
+  firstName: string
+}
+
 function App() {
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit } = useForm<FormData>({
     defaultValues: {
       firstName: "",
     },
   });
 
-  const formSubmit = (data: any) => {
+  const formSubmit = (data: FormData) => {
     console.log(data);
   };
 
