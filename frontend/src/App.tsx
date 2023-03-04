@@ -53,7 +53,7 @@ function App() {
             rules={{max:30, min: 20}}
             render={({field}) => (
               <Form.Control 
-                isInvalid={errors.age  ? true: undefined}
+                isInvalid={errors.age ? true: undefined}
                 type="text" 
                 {...field} 
               />
@@ -77,20 +77,20 @@ function App() {
             name="email"
             control={control}
             rules={{
-              pattern: 
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              required: true,
             }}
-            render={({ field }) =>(
-              <Form.Control
+            render={({field}) => (
+              <Form.Control 
                 isInvalid={errors.email ? true: undefined}
-                type="text"
-                {...field}
+                type="email" 
+                {...field} 
               />
             )}
           />
           {errors.email?.type === "pattern" && (
             <Form.Control.Feedback type="invalid">
-              Must enter a valid email
+              You must enter a valid email.
             </Form.Control.Feedback>
           )}
         </Form.Group>
