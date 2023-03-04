@@ -8,6 +8,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 interface FormData {
   firstName: string,
   age: number,
+  email: string,
 }
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     defaultValues: {
       firstName: "",
       age:0,
+      email: "",
     },
   });
 
@@ -51,18 +53,46 @@ function App() {
             rules={{max:30, min: 20}}
             render={({field}) => (
               <Form.Control 
-                isInvalid={errors.age ? true: undefined} 
-                type="text" {...field} 
-                placeholder="First name"
+                isInvalid={errors.age  ? true: undefined}
+                type="text" 
+                {...field} 
               />
             )}
           />
-          <Form.Control.Feedback type="invalid">
-            Minimum age is 20.
-          </Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-            Maximum age is 30
-          </Form.Control.Feedback>
+          {errors.age?.type === "min" && (
+            <Form.Control.Feedback type="invalid">
+              Minimum age is 20.
+            </Form.Control.Feedback>
+          )}
+          {errors.age?.type === "max" && (
+            <Form.Control.Feedback type="invalid">
+              Maximum age is 30
+            </Form.Control.Feedback>
+          )}
+          
+        </Form.Group>
+        <Form.Group as={Col} md="4">
+          <Form.Label>Email</Form.Label>
+          <Controller
+            name="email"
+            control={control}
+            rules={{
+              pattern: 
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            }}
+            render={({ field }) =>(
+              <Form.Control
+                isInvalid={errors.email ? true: undefined}
+                type="text"
+                {...field}
+              />
+            )}
+          />
+          {errors.email?.type === "pattern" && (
+            <Form.Control.Feedback type="invalid">
+              Must enter a valid email
+            </Form.Control.Feedback>
+          )}
         </Form.Group>
       </Row>
       <Button type="submit">Submit Form</Button>
