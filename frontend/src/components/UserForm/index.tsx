@@ -6,13 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../../store/slices/userSlice'
 
 export default function UserForm() {
-  const { register, control, handleSubmit, formState:{errors} } = useForm<User>({
-    defaultValues: {
-      firstName: "",
-      age:0,
-      email: "",
-    },
-  });
+  const { register, control, handleSubmit, formState:{errors} } = useForm<User>({});
 
   const displatch = useDispatch();
 
@@ -96,6 +90,7 @@ export default function UserForm() {
         <Form.Group as={Col} md="3">
           <Form.Label>Gender</Form.Label>
           <Form.Select {...register('gender')}>
+            <option>Choose</option>
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
