@@ -5,14 +5,21 @@ import { Controller, useForm } from 'react-hook-form';
 // import { RootState } from './app/store';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
+enum GenderEnum {
+  female = "female",
+  male = "male",
+  other = "other",
+
+}
 interface FormData {
   firstName: string,
   age: number,
   email: string,
+  gender: GenderEnum,
 }
 
 function App() {
-  const { control, handleSubmit, formState:{errors} } = useForm<FormData>({
+  const { register, control, handleSubmit, formState:{errors} } = useForm<FormData>({
     defaultValues: {
       firstName: "",
       age:0,
@@ -94,6 +101,14 @@ function App() {
             </Form.Control.Feedback>
           )}
         </Form.Group>
+      </Row>
+      <Row>
+        <Form.Label>Gender</Form.Label>
+        <Form.Select>
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </Form.Select>
       </Row>
       <Button type="submit">Submit Form</Button>
     </Form>
