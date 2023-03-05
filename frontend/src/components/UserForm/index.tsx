@@ -6,14 +6,15 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../../store/slices/userSlice'
 
 export default function UserForm() {
-  
+
   const { register, control, handleSubmit, formState:{errors} } = useForm<User>({});
 
   const displatch = useDispatch();
 
   const formSubmit = (data: User) => {
-    displatch(addUser(data))
-    console.log(data);
+    // displatch(addUser(data))
+    // console.log(data);
+    
   };
 
   return (

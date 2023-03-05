@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import UserForm from './index'
 import User from '../../types'
+import {rest} from 'msw';
 
 describe('Should render create user form', () => {
   const { getByText } = render(<UserForm/>)
@@ -9,7 +10,7 @@ describe('Should render create user form', () => {
       expect(getByText('First name')).toBeInDocument;
     })
     it('has a functional input', () => {
-      
+
     })
   })
   describe('has name label', () => {
