@@ -19,7 +19,7 @@ export default function UserForm() {
   return (
     <Form noValidate onSubmit={handleSubmit(formSubmit)}>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4">
+        <Form.Group as={Col} md="3">
           <Form.Label>First name</Form.Label>
           <Controller 
             name="firstName" 
@@ -37,7 +37,7 @@ export default function UserForm() {
             First name is required.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4">
+        <Form.Group as={Col} md="3">
           <Form.Label>Age</Form.Label>
           <Controller
             name="age"
@@ -63,10 +63,9 @@ export default function UserForm() {
           )}
           
         </Form.Group>
-
       </Row>
-      <Row>
-      <Form.Group as={Col} md="4">
+      <Row className="mb-3">
+      <Form.Group as={Col} md="3">
           <Form.Label>Email</Form.Label>
           <Controller
             name="email"
@@ -89,7 +88,7 @@ export default function UserForm() {
             </Form.Control.Feedback>
           )}
         </Form.Group>
-        <Form.Group as={Col} md="4">
+        <Form.Group as={Col} md="3">
           <Form.Label>Gender</Form.Label>
           <Form.Select {...register('gender')}>
             <option value="male">male</option>
