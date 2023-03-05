@@ -29,7 +29,6 @@ DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# These next two definitions are used in conjunction for 
 AUTH_USER_MODEL = 'core_user.User'
 
 REST_FRAMEWORK = {
