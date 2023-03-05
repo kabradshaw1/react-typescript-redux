@@ -2,6 +2,7 @@ import React from 'react'
 import { Controller, useForm } from 'react-hook-form';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import User from '../../types'
+import { useDispatch } from 'react-redux';
 
 export default function UserForm() {
   const { register, control, handleSubmit, formState:{errors} } = useForm<User>({
@@ -11,6 +12,8 @@ export default function UserForm() {
       email: "",
     },
   });
+
+  const displaych = useDispatch();
 
   const formSubmit = (data: User) => {
     console.log(data);
