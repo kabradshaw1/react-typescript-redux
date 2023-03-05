@@ -3,6 +3,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import User from '../../types'
 import { useDispatch } from 'react-redux';
+import { addUser } from '../../store/slices/userSlice'
 
 export default function UserForm() {
   const { register, control, handleSubmit, formState:{errors} } = useForm<User>({
@@ -13,9 +14,10 @@ export default function UserForm() {
     },
   });
 
-  const displaych = useDispatch();
+  const displatch = useDispatch();
 
   const formSubmit = (data: User) => {
+    displatch(addUser(data))
     console.log(data);
   };
 
