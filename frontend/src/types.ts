@@ -4,7 +4,7 @@ enum GenderEnum {
   other = "other",
 }
 
-export default interface UserState {
+export default interface User {
   firstName: string,
   age: number,
   email: string,

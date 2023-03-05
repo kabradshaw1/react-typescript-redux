@@ -1,22 +1,10 @@
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-
-enum GenderEnum {
-  female = "female",
-  male = "male",
-  other = "other",
-
-}
-interface FormData {
-  firstName: string,
-  age: number,
-  email: string,
-  gender: GenderEnum,
-}
+import User from '../../types'
 
 export default function UserForm() {
-  const { register, control, handleSubmit, formState:{errors} } = useForm<FormData>({
+  const { register, control, handleSubmit, formState:{errors} } = useForm<User>({
     defaultValues: {
       firstName: "",
       age:0,
@@ -24,7 +12,7 @@ export default function UserForm() {
     },
   });
 
-  const formSubmit = (data: FormData) => {
+  const formSubmit = (data: User) => {
     console.log(data);
   };
 
@@ -75,7 +63,10 @@ export default function UserForm() {
           )}
           
         </Form.Group>
-        <Form.Group as={Col} md="4">
+
+      </Row>
+      <Row>
+      <Form.Group as={Col} md="4">
           <Form.Label>Email</Form.Label>
           <Controller
             name="email"
@@ -98,14 +89,14 @@ export default function UserForm() {
             </Form.Control.Feedback>
           )}
         </Form.Group>
-      </Row>
-      <Row>
-        <Form.Label>Gender</Form.Label>
-        <Form.Select {...register('gender')}>
-          <option value="male">male</option>
-          <option value="female">female</option>
-          <option value="other">other</option>
-        </Form.Select>
+        <Form.Group as={Col} md="4">
+          <Form.Label>Gender</Form.Label>
+          <Form.Select {...register('gender')}>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </Form.Select>
+        </Form.Group>
       </Row>
       <Button type="submit">Submit Form</Button>
     </Form>
