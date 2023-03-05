@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import User from '../../types'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../store/slices/userSlice'
+import axios from 'axios';
 
 export default function UserForm() {
 
@@ -11,10 +12,11 @@ export default function UserForm() {
 
   const displatch = useDispatch();
 
-  const formSubmit = (data: User) => {
+  const formSubmit = async (data: User) => {
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/user/create`, {})
     // displatch(addUser(data))
     // console.log(data);
-    
+
   };
 
   return (
@@ -23,7 +25,7 @@ export default function UserForm() {
         <Form.Group as={Col} md="3">
           <Form.Label>First name</Form.Label>
           <Controller 
-            name="firstName" 
+            name="email" 
             control={control} 
             rules={{required:true}} 
             render={({field}) => (
@@ -35,7 +37,7 @@ export default function UserForm() {
             )}
           />
           <Form.Control.Feedback type="invalid">
-            First name is required.
+            me is required.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3">
