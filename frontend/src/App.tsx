@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { RootState } from './app/store';
-import FormComp from './components/Form'
+import UserForm from './components/UserForm'
 
 
 
 function App() {
   return (
-    <FormComp></FormComp>
+    <UserForm></UserForm>
   )
 }
 

@@ -15,7 +15,7 @@ interface FormData {
   gender: GenderEnum,
 }
 
-export default function FormComp() {
+export default function UserForm() {
   const { register, control, handleSubmit, formState:{errors} } = useForm<FormData>({
     defaultValues: {
       firstName: "",
