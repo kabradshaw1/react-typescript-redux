@@ -4,4 +4,5 @@ from core.item.serializers import ItemSerializer
 
 class ItemViewSet(viewsets.ModelViewSet):
   serializer_class = ItemSerializer
-  queryset = Item.objects.all()
+  def get_queryset(self):
+    return Item.objects.all()

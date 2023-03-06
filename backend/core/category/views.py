@@ -4,4 +4,5 @@ from core.category.models import Category
 
 class CategoryViewSet(viewsets.ModelViewSet):
   serializer_class = CategorySerializer
-  queryset = Category.objects.all()
+  def get_queryset(self):
+    return Category.objects.all()
