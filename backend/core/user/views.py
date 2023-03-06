@@ -1,9 +1,7 @@
 from core.user.serializers import UserSerializer
 from core.user.models import User
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.permissions import IsAuthenticated
-from rest_framework import filters
-
 
 class UserViewSet(viewsets.ModelViewSet):
     http_method_names = ['get']

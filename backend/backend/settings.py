@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
     'core',
     'core.user',
+    'core.item',
+    'core.category',
+    'core.order',
 
     'rest_framework', 
     'corsheaders',
