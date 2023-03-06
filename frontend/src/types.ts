@@ -1,12 +1,14 @@
-enum GenderEnum {
-  female = "female",
-  male = "male",
-  other = "other",
-}
+// enum GenderEnum {
+//   female = "female",
+//   male = "male",
+//   other = "other",
+// }
 
 export default interface User {
   firstName: string,
-  age: number,
+  // age: number,
   email: string,
-  gender: GenderEnum,
+  password: string,
+  
+  // gender: GenderEnum,
 }

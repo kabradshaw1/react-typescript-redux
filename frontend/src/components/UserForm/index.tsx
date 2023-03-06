@@ -37,10 +37,10 @@ export default function UserForm() {
             )}
           />
           <Form.Control.Feedback type="invalid">
-            me is required.
+            name is required.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3">
+        {/* <Form.Group as={Col} md="3">
           <Form.Label>Age</Form.Label>
           <Controller
             name="age"
@@ -65,7 +65,7 @@ export default function UserForm() {
             </Form.Control.Feedback>
           )}
           
-        </Form.Group>
+        </Form.Group> */}
       </Row>
       <Row className="mb-3">
       <Form.Group as={Col} md="3">
@@ -91,7 +91,7 @@ export default function UserForm() {
             </Form.Control.Feedback>
           )}
         </Form.Group>
-        <Form.Group as={Col} md="3">
+        {/* <Form.Group as={Col} md="3">
           <Form.Label>Gender</Form.Label>
           <Form.Select {...register('gender')}>
             <option>Choose</option>
@@ -99,7 +99,7 @@ export default function UserForm() {
             <option value="female">female</option>
             <option value="other">other</option>
           </Form.Select>
-        </Form.Group>
+        </Form.Group> */}
       </Row>
       <Button type="submit">Submit Form</Button>
     </Form>
