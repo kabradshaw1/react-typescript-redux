@@ -1,5 +1,5 @@
 from django.db import models
-from core.category.models import Category
+from core.order.models import Order
 
 class Item(models.Model):
   name = models.CharField(max_length=50, unique=True)
@@ -9,6 +9,7 @@ class Item(models.Model):
   quantity = models.PositiveIntegerField(default=0)
   created = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
+  order = model.ManyToManyField(Order)
 
   def __str__(self):
     return self.name

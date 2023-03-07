@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Header from './components/Header';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import UserForm from './components/UserForm'
 import axios from 'axios';
 
@@ -12,7 +13,10 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 function App() {
   return (
-    <UserForm/>
+    <>
+      <Header/>
+      <UserForm/>
+    </>
   )
 }
 
