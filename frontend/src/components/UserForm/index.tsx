@@ -30,7 +30,7 @@ export default function UserForm() {
             rules={{required:true}} 
             render={({field}) => (
               <Form.Control 
-                isInvalid={errors.firstName ? true: undefined} 
+                isInvalid={errors.username ? true: undefined} 
                 type="text" {...field} 
                 placeholder="First name"
               />

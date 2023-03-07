@@ -3,7 +3,7 @@ from core.order.models import Order
 from core.item.models import Item
 
 class OrderSerializer(serializers.ModelSerializer):
-  item = serializers.PrimaryKeyRelatedField(many=True)
+  item = serializers.StringRelatedField(many=True)
 
   class Meta:
     model = Order

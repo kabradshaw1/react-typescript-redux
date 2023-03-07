@@ -8,5 +8,5 @@ class UserSerializer(serializers.ModelSerializer):
   order = serializers.PrimaryKeyRelatedField(many=True)
   class Meta:
     model = User
-    fields = ['id', 'username', 'email', 'is_active', 'created', 'updated', 'orders']
+    fields = ['id', 'username', 'email', 'is_active', 'created', 'updated', 'order']
     read_only_field = ['is_active', 'created', 'updated']
