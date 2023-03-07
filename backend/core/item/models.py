@@ -3,7 +3,6 @@ from core.category.models import Category
 
 class Item(models.Model):
   name = models.CharField(max_length=50, unique=True)
-  category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
   price = models.DecimalField(required=True)
   image = models.CharField(max_length=100)
   description = models.textField(max_length=250)
