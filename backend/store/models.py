@@ -23,7 +23,7 @@ class Item(models.Model):
   
 class Order(models.Model):
 
-  item = models.ManyToManyField(Item, through='OrderedItems')
+  ordered_items = models.ManyToManyField(Item, through='OrderedItems')
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='order')
   created = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
