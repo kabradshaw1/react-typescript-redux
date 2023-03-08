@@ -1,9 +1,9 @@
 from django.urls import path
-# from .views import StoreList, StoreDetail
+# from .views import ItemList, SingleItem, CreateOrder, DeleteOrde
 
-app_name = 'blog_api'
+app_name = 'store_api'
 
 urlpatterns = [
-  # path('<int:pk>/', StoreDetail.as_view(), name='detailcreate'),
-  # path('', StoreList.as_view(), name='listcreate'),
+  # path('item/<int:pk>/', StoreDetail.as_view(), name='detailcreate'),
+  # path('', ItemList.as_view(), name='listcreate'),
 ]

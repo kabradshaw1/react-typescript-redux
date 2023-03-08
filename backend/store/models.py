@@ -22,7 +22,7 @@ class Item(models.Model):
   # )
 
   # category = models.CharField(max_length=20, choices=options)
-  category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
+  category = models.ForeignKey(Category, related_name='item', on_delete=models.PROTECT, default=1)
   name = models.CharField(max_length=50, unique=True)
   price = models.DecimalField(max_digits=10, decimal_places=2)
   image = models.CharField(max_length=100)
