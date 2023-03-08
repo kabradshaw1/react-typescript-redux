@@ -35,16 +35,11 @@ class Item(models.Model):
     return self.name
   
 class Order(models.Model):
-  
-  class UserOrder(models.manager):
-    return super().get_queryset().filter()
 
   item = models.ManyToManyField(Item)
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='order')
   created = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
-  user_objects = UserOrder()
-  objects = models.Manager()
 
   def __str__(self):
     return self.id
