@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-'''
-not really sure I think there is any reason to have a category at this point 
-I could just as easily have this as a property in the items class.  I guess 
-I'll leave it in here for practice
-'''
+
 class Category(models.Model):
   name = models.CharField(max_length=100)
 
@@ -13,15 +9,6 @@ class Category(models.Model):
 
 class Item(models.Model):
 
-  # options = (
-  #   'Food',
-  #   'Household Supplies',
-  #   'Electronics',
-  #   'Books',
-  #   'Toys',
-  # )
-
-  # category = models.CharField(max_length=20, choices=options)
   category = models.ForeignKey(Category, related_name='item', on_delete=models.PROTECT, default=1)
   name = models.CharField(max_length=50, unique=True)
   price = models.DecimalField(max_digits=10, decimal_places=2)
