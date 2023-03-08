@@ -23,10 +23,15 @@ class Item(models.Model):
   
 class Order(models.Model):
 
-  item = models.ManyToManyField(Item)
+  item = models.ManyToManyField(Item, through='OrderedItems')
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='order')
   created = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
 
   def __str__(self):
     return self.id
+
+class OrderedItems(models.Model):
+  item = models.ForeignKey(Item, on_delete=PROTECT)
+  order = models.ForeignKey(Order, on_delete=CASCADE)
+  quantity = models.PositiveIntegerField(default=1)
