@@ -32,6 +32,6 @@ class Order(models.Model):
     return self.id
 
 class OrderedItems(models.Model):
-  item = models.ForeignKey(Item, on_delete=PROTECT)
-  order = models.ForeignKey(Order, on_delete=CASCADE)
+  item = models.ForeignKey(Item, on_delete=models.PROTECT)
+  order = models.ForeignKey(Order, on_delete=models.CASCADE)
   quantity = models.PositiveIntegerField(default=1)
