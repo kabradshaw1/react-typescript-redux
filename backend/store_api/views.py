@@ -6,3 +6,9 @@ class ItemList(generics.ListCreateAPIView):
   queryset = Item.objects.all()
   serializer_class = ItemSerializer
   pass
+
+class ItemDetail(generics.ReteriveDestroyAPIView):
+  queryset = Item.objects.all()
+  serializer_class = ItemSerializer
+  pass
+
