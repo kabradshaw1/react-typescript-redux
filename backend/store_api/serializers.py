@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Items, Order, Category
+from store.models import Item, Order, Category
 
 class CategorySerializer(serializers.ModelSerializer):
   item = serializers.StringRelatedField()
@@ -14,3 +14,7 @@ class ItemSerializer(serializers.ModelSerializer):
     fields = ['id', 'name', 'price', 'image', 'description', 'quantity', 'created', 'updated']
 
 class OrderSerializer(serializers.ModelSerializer):
+
+  class Meta:
+    model = Order
+    fields = []

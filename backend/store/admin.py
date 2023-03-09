@@ -3,6 +3,6 @@ from . import models
 
 @admin.register(models.OrderedItems)
 class ItemAdmin(admin.ModelAdmin):
-  list_display = ('')
+  list_display = ('item', 'order', 'quantity')
 
 admin.site.register(models.Category)
