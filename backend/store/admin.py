@@ -5,4 +5,8 @@ from . import models
 class ItemAdmin(admin.ModelAdmin):
   list_display = ('item', 'order', 'quantity')
 
+admin.site.register(models.Order)
+
+admin.site.register(models.Item)
+
 admin.site.register(models.Category)
