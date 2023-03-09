@@ -32,14 +32,17 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # AUTH_USER_MODEL = 'store_user.User'
 
-# REST_FRAMEWORK = {
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AppowAny',
+    ]
 #     'DEFAULT_AUTHENTICATION_CLASSES': (
 #         'rest_framework_simplejwt.authentication.JWTAuthentication',
 #     ),
 #     'DEFAULT_RENDERER_CLASSES': (
 #         'rest_framework.renderers.JSONRenderer',
 #     )
-# }
+}
 
 # Application definition
 
