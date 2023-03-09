@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ItemList
+from .views import ItemList, ItemDetail
 
 app_name = 'store_api'
 
