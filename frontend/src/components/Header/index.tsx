@@ -1,11 +1,15 @@
 import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap';
+import { useDispatch } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 
 export default function Header() {
+  const dispatch = useDispatch();
+
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container>

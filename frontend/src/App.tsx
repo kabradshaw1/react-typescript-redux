@@ -12,6 +12,9 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 
 function App() {
+
+  const nav = useSelector((state: RootState) => state.nav.value);
+
   return (
     <>
       <Header/>
