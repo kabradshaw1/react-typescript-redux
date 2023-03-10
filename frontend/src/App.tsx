@@ -15,7 +15,9 @@ function App() {
   return (
     <>
       <Header/>
-      <UserForm/>
+      <Routes>
+        <UserForm/>
+      </Routes>
     </>
   )
 }
