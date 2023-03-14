@@ -21,8 +21,8 @@ export default function UserForm() {
 
   return (
     <Form noValidate onSubmit={handleSubmit(formSubmit)}>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="3">
+      <Col className="mb-3">
+        <Form.Group as={Row} md="3">
             <Form.Label>Email</Form.Label>
             <Controller
               name="email"
@@ -45,11 +45,11 @@ export default function UserForm() {
               </Form.Control.Feedback>
             )}
           </Form.Group>
-          <Form.Group as={Col} md="3">
+          <Form.Group as={Row} md="3">
             <Form.Label>Password</Form.Label>
             <Form.Control {...register('password')} type='password'/>
           </Form.Group>
-      </Row>
+      </Col>
       <Button type="submit">Submit Form</Button>
     </Form>
   );
