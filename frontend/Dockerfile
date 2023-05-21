@@ -1,6 +1,6 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /react
 
 COPY package.json ./
 

@@ -5,8 +5,6 @@ services:
     build:
       context: ./backend
     restart: always
-    volumes:
-      - static_data:/vol/web
     environment:
       - DB_HOST=db
       - DB_NAME=${DB_NAME}
@@ -18,6 +16,19 @@ services:
     depends_on:
       - db
 
+  frontend:
+    container_name: react_app
+    restart: on-failure
+    build:
+      context: ./frontend
+    volumes:
+      - react_build:/frontend/build
+
+    command: >
+      sh -c "yarn start"
+    env_file:
+      - .env
+
   db:
     image: postgres:14-alpine
     restart: always
@@ -28,7 +39,8 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
 
-  proxy:
+  nginx:
+    image: nginxinc/nginx-unprivileged:1.24-alpine
     build:
       context: ./backend/proxy
     restart: always
@@ -40,20 +52,8 @@ services:
     volumes:
       - static_data:/vol/static
 
-  frontend:
-    container_name: react_app
-    restart: on-failure
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    volumes:
-      - ./frontend/src:/app/src
-    ports:
-      - "6000:6000"
-    command: >
-      sh -c "yarn start"
-    env_file:
-      - .env
+
 volumes:
   postgres-data:
   static_data:
+  react_build:
