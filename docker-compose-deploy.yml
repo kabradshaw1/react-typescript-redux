@@ -5,6 +5,9 @@ services:
     build:
       context: ./backend
     restart: always
+    command: gunicorn backend.wsgi --bind 0.0.0.0:8000
+    ports:
+    - "8000:8000"
     environment:
       - DB_HOST=db
       - DB_NAME=${DB_NAME}
@@ -17,15 +20,11 @@ services:
       - db
 
   frontend:
-    container_name: react_app
     restart: on-failure
     build:
       context: ./frontend
     volumes:
       - react_build:/frontend/build
-
-    command: >
-      sh -c "yarn start"
     env_file:
       - .env
 
