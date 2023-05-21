@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  app:
+  backend:
     build:
       context: ./backend
     restart: always
@@ -40,7 +40,7 @@ services:
     volumes:
       - static_data:/vol/static
 
-  web:
+  frontend:
     container_name: react_app
     restart: on-failure
     build:
