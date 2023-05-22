@@ -37,8 +37,6 @@ services:
 
   nginx:
     image: nginxinc/nginx-unprivileged:1.24-alpine
-    build:
-      context: ./backend/proxy
     restart: always
     depends_on:
       - backend
