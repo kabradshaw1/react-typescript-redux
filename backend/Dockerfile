@@ -1,16 +1,21 @@
+# pull official base image
 FROM python:3.11-alpine3.17
-LABEL maintainer="https://www.linkedin.com/in/kyle-bradshaw-15950988/"
 
-ENV PYTHONUNBUFFERED 1
-
-COPY ./requirements.txt /tmp/requirements.txt
-COPY . .
+# set work directory
 WORKDIR /django
 
-RUN python -m venv /py && \
-    /py/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client jpeg-dev && \
-    apk add --update --no-cache --virtual .tmp-build-deps \
-        build-base postgresql-dev musl-dev zlib zlib-dev linux-headers && \
-    /py/bin/pip install -r /tmp/requirements.txt && \
-    rm -rf /tmp 
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install psycopg2 dependencies
+RUN apk update \
+    && apk add postgresql-dev gcc python3-dev musl-dev
+
+# install python dependencies
+COPY requirements.txt /django/requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+
+# copy project
+COPY . .

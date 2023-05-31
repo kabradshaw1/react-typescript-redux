@@ -8,8 +8,8 @@ This project is for demonstration of my level of proficiency with Django Postgre
 * djangorestframework
 * psycopg2
 * drf-spectacular
-* djangorestframework-simplejw
-* uwsgi
+* djangorestframework-simplejwt
+* gunicorn
 * drf-spectacular
 
 ## Use
