@@ -1,6 +1,6 @@
 FROM node:18-alpine as build
 WORKDIR /frontend
 COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+RUN npm ci
+COPY . ./
+RUN npm run buildg
