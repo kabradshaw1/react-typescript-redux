@@ -3,7 +3,7 @@ import createAuthRefreshInterceptor from 'axios-auth-refresh';
 import store from '../store';
 import authSlice from '../store/slices/authSlice';
 
-const baseURL = `${process.env.REACT_APP_API_URL}`;
+const baseURL = `/api`;
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
