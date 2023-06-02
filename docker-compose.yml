@@ -31,7 +31,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - ./seed.sql:/tmp/seed.sql
     ports:
-      - "5433:5433"
+      - "5433:5432"
 
   frontend:
     build:
