@@ -30,8 +30,9 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./seed.sql:/tmp/seed.sql
-    expose:
-      - "5432:5432"
+    ports:
+      - "5433:5433"
+
   frontend:
     build:
       context: ./frontend
