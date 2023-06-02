@@ -5,7 +5,7 @@ This project is for the purpose of learning about integrating these three techno
 
 ## Deployed Site
 
-ec2-52-91-48-17.compute-1.amazonaws.com
+[Store](ec2-52-91-48-17.compute-1.amazonaws.com)
 
 ## Installation
 
