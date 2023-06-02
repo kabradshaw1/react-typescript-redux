@@ -3,4 +3,4 @@ WORKDIR /frontend
 COPY package*.json ./
 RUN npm ci
 COPY . ./
-RUN npm run buildgg
+RUN npm run build
