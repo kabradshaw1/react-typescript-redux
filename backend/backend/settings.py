@@ -16,10 +16,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 # STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# bool(int(os.environ.get('DEBUG', 0)))
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'ec2-52-91-48-17.compute-1.amazonaws.com']
 # ALLOWED_HOSTS.extend(
 #     filter(
 #         None,
@@ -146,7 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 
-CORS_ALLOWED_ORIGINS = ['http://127.0.0.1', 'http://localhost:3000']
+CORS_ALLOWED_ORIGINS = ['http://127.0.0.1', 'http://localhost:3000', 'ec2-52-91-48-17.compute-1.amazonaws.com']
 
 # CORS_ALLOW_ALL_ORIGINS: True
 
