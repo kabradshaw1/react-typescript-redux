@@ -6,12 +6,12 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../../store/slices/cartSlice';
 import { Items } from '../../utils/types';
 
-const ItemCard: React.FC<Items> = ({ id, price, name, description, category, image, quantity }) => {
+const ItemCard: React.FC<Items> = ({ id, price, name, description, category, image, quantity, slug }) => {
   const dispatch = useDispatch();
-
+  
   return (
       <Card>
-        <LinkContainer to={`/item/${id}`}>
+        <LinkContainer to={`/item/${slug}`}>
           <Card.Img variant='top' src={`/images/${image}`}/>
         </LinkContainer>
         <Card.Body>

@@ -37,6 +37,7 @@ export interface Items {
   image: string,
   created: Date,
   updated: Date,
+  slug: string
 }
 
 export interface Order {
