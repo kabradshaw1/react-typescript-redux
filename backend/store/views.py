@@ -23,7 +23,7 @@ class ItemViewSet(viewsets.ModelViewSet):
 
   def get_object(self, queryset=None, **kwargs):
     item = self.kwargs.get('pk')
-    return get_object_or_404(Order, name=item)
+    return get_object_or_404(Item, name=item)
 
   def get_queryset(self):
     return Item.objects.all()
