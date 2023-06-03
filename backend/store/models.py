@@ -12,10 +12,6 @@ class Category(models.Model):
     return self.name
 
 class Item(models.Model):
-  id: int
-  # orders: models.ManyToManyField['Order', 'OrderedItem']
-  category_id: int
-  item: Manager['OrderedItem']
 
   name = models.CharField(max_length=50)
   price = models.DecimalField(max_digits=8, decimal_places=2)

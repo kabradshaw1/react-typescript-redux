@@ -5,7 +5,7 @@ from .models import Item, Order, Category
 from .serializers import ItemSerializer, OrderSerializer, CategorySerializer, CheckoutSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import status, permissions
 from rest_framework.request import Request
 
@@ -21,9 +21,11 @@ class ItemViewSet(viewsets.ModelViewSet):
   queryset = Item.objects.all()
   serializer_class = ItemSerializer
 
-  def get_object(self, queryset=None, **kwargs):
-    item = self.kwargs.get('pk')
-    return get_object_or_404(Item, name=item)
+  @action(detail=False, methods=['get'], url_path='(?P<slug>[-\w]+)/$', url_name='item-detail')
+  def get_by_slug(self, request, slug=None):
+      item = get_object_or_404(Item, slug=slug)
+      serializer = self.get_serializer(item)
+      return Response(serializer.data)
 
   def get_queryset(self):
     return Item.objects.all()
