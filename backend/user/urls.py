@@ -12,6 +12,8 @@ routes.register(r'auth/refresh', RefreshViewSet, basename='auth-refresh')
 # USER
 routes.register(r'user', UserViewSet, basename='user')
 
+app_name = 'user'
+
 urlpatterns = [
-  path('', include(routes.url))
+  path('', include(routes.urls))
 ]

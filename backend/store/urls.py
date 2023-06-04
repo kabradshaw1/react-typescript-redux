@@ -10,6 +10,8 @@ routes.register(r'item', ItemViewSet, basename='item')
 routes.register(r'category', CategoryViewSet, basename='category')
 routes.register(r'order', OrderViewSet, basename='order')
 
+app_name = 'store'
+
 urlpatterns = [
     path('', include(routes.urls)),
     path('checkout/', checkout, name='checkout'),
