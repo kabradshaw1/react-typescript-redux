@@ -39,14 +39,14 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.dev
     command: >
-      sh -c "npm start"
+      sh -c "yarn start"
     volumes:
        - ./frontend/src:/frontend/src
     ports:
       - "3000:3000"
     environment:
       - REACT_APP_API_URL=http://127.0.0.1:8000/api
-      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
 
 volumes:
   postgres-data:
