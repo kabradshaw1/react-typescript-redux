@@ -21,12 +21,9 @@ class ItemViewSet(viewsets.ModelViewSet):
   queryset = Item.objects.all()
   serializer_class = ItemSerializer
 
-  @action(detail=False, methods=['get'], url_path='(?P<slug>[-\w]+)/$', url_name='item-detail')
-  def get_by_slug(self, request, slug=None):
-      item = get_object_or_404(Item, slug=slug)
-      serializer = self.get_serializer(item)
-      return Response(serializer.data)
-
+  def get_object(self, queryset=None, **kwargs):
+    slug = self.kwargs.get('pk')
+    return get_object_or_404(Item, slug=slug)
   def get_queryset(self):
     return Item.objects.all()
 
