@@ -30,7 +30,7 @@ const CheckOut: React.FC = () => {
 
   const CheckOutSubmit = () => {
     setLoading(true);
-    axiosInstance.post('checkout/',
+    axiosInstance.post('store/checkout/',
       {
         ordered_items: axiosCart,
         price: getTotal().totalPrice.toFixed(2)

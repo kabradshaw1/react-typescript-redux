@@ -44,7 +44,7 @@ const refreshAuthLogic = async (failedRequest) => {
   if (refreshToken !== null) {
       return axios
           .post(
-              '/auth/refresh/',
+              '/user/auth/refresh/',
               {
                   refresh: refreshToken,
               },

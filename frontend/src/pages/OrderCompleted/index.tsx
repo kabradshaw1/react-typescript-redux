@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card';
 import formatDate from '../../utils/format-date';
 
 const OrderCompleted = () => {
-  const { data: orders, error, isLoading } = useSWR<Order[]>('/order/', fetcher)
+  const { data: orders, error, isLoading } = useSWR<Order[]>('/store/order/', fetcher)
   if(error) return <Container><h3>Failed to load</h3></Container>
   if(isLoading) return <Container><h3>Loading...</h3></Container>
 

@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
+import axiosInstance from '../../utils/axios';
 
 type Inputs = {
   email: string,
@@ -34,8 +34,8 @@ function Login() {
 
   const formSubmit: SubmitHandler<Inputs> = data => {
     setLoading(true);
-    axios
-      .post('http://127.0.0.1:8000/api/auth/login/',
+    axiosInstance
+      .post('user/auth/login/',
         {
           email: data.email,
           password: data.password

@@ -8,10 +8,10 @@ import { Items } from '../../utils/types';
 
 const ItemCard: React.FC<Items> = ({ id, price, name, description, category, image, quantity, slug }) => {
   const dispatch = useDispatch();
-  
+
   return (
       <Card>
-        <LinkContainer to={`/item/${slug}`}>
+        <LinkContainer to={`/store/item/${slug}`}>
           <Card.Img variant='top' src={`/images/${image}`}/>
         </LinkContainer>
         <Card.Body>
