@@ -9,9 +9,8 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('store.urls', namespace='store')),
-    path('api/checkout/', checkout, name='checkout'),
-    path('api/health-check/', health_check, name='health-check'),
+    path('api/store/', include('store.urls', namespace='store')),
+    path('api/user/', include('user.urls', mamespace='user')),
     path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path(
         'api/docs/',
