@@ -1,12 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-from django.db.models.manager import Manager
 
 class Category(models.Model):
-  id: int
-  items: Manager['Item']
-
-  name = models.CharField(max_length=50)
 
   def __str__(self):
     return self.name
@@ -27,9 +22,7 @@ class Item(models.Model):
     return f'{self.name}'
 
 class Order(models.Model):
-  id: int
-  ordered_items: Manager['OrderedItem']
-  user_id: int
+
 
   items = models.ManyToManyField(Item, related_name='orders', blank=True, through='OrderedItem')
   user = models.ForeignKey(to='user.User', related_name='order', on_delete=models.CASCADE)
@@ -42,9 +35,6 @@ class Order(models.Model):
     return f'{self.price}'
 
 class OrderedItem(models.Model):
-  id: int
-  order_id: int
-  item_id: int
 
   order = models.ForeignKey(Order, related_name='ordered_items', on_delete=models.CASCADE)
   item = models.ForeignKey(Item, related_name='ordered_item', on_delete=models.CASCADE)
