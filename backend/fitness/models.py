@@ -11,13 +11,25 @@ class Active(models.Model):
 
 
 class Heart(models.Model):
-  pass
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  qty = models.IntegerField()
+  created = models.DateTimeField(auto_now_add=True)
 
-class Distance(models.Model):
-  pass
+  def __str__(self):
+    return f'{self.qty}'
 
 class Steps(models.Model):
-  pass
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  qty = models.IntegerField()
+  created = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return f'{self.qty}'
 
 class Weight(models.Model):
-  pass
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  qty = models.IntegerField()
+  created = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return f'{self.qty}'
