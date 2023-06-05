@@ -15,4 +15,12 @@ class ModelsTests(TestCase):
 
   def test_creating_active(self):
     """Test creating an active is successful."""
-    
+    user = create_user()
+    active = models.Active.objects.create(qty=1, user=user)
+
+    self.assertEqual(str(active), active.qty)
+
+  def test_create_heart(self):
+    """Test creating a heart is successful."""
+    user = create_user()
+    heart = models.Heart.objects.create()

@@ -5,3 +5,15 @@ class Active(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   qty = models.IntegerField()
   created = models.DateTimeField(auto_now_add=True)
+
+class Heart(models.Model):
+  pass
+
+class Distance(models.Model):
+  pass
+
+class Steps(models.Model):
+  pass
+
+class Weight(models.Model):
+  pass

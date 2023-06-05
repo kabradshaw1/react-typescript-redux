@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator
 
 class Category(models.Model):
 
+  name = models.CharField(max_length=50)
+
   def __str__(self):
     return self.name
 
@@ -22,7 +24,6 @@ class Item(models.Model):
     return f'{self.name}'
 
 class Order(models.Model):
-
 
   items = models.ManyToManyField(Item, related_name='orders', blank=True, through='OrderedItem')
   user = models.ForeignKey(to='user.User', related_name='order', on_delete=models.CASCADE)
