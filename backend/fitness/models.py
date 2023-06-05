@@ -6,6 +6,10 @@ class Active(models.Model):
   qty = models.IntegerField()
   created = models.DateTimeField(auto_now_add=True)
 
+  def __str__(self):
+    return f'{self.qty}'
+
+
 class Heart(models.Model):
   pass
 

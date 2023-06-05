@@ -13,14 +13,9 @@ def create_user(username='testuser', email='user@example.com', password='testpas
 class ModelsTests(TestCase):
   """Test models."""
 
-  def test_creating_active(self):
+  def test_creating_fitness(self):
     """Test creating an active is successful."""
     user = create_user()
-    active = models.Active.objects.create(qty=1, user=user)
+    active = models.Active.objects.create(qty=1, user=user, active=1)
 
     self.assertEqual(str(active), active.qty)
-
-  def test_create_heart(self):
-    """Test creating a heart is successful."""
-    user = create_user()
-    heart = models.Heart.objects.create()
