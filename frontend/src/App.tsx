@@ -21,7 +21,7 @@ function App() {
             <Route path='/register' element={<RegisterUser/>}/>
             <Route path='/login' element={<LoginUser/>}/>
             <Route path='/checkout' element={<CheckOut/>}/>
-            <Route path='/store/item/:id' element={<Detail/>}/>
+            <Route path='/item/:id' element={<Detail/>}/>
             <Route path='/order_completed' element={<OrderCompleted/>}/>
           </Routes>
         </Container>

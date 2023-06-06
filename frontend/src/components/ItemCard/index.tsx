@@ -11,7 +11,7 @@ const ItemCard: React.FC<Items> = ({ id, price, name, description, category, ima
 
   return (
       <Card>
-        <LinkContainer to={`/store/item/${slug}`}>
+        <LinkContainer to={`/item/${slug}`}>
           <Card.Img variant='top' src={`/images/${image}`}/>
         </LinkContainer>
         <Card.Body>
