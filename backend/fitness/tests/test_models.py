@@ -16,27 +16,27 @@ class ModelsTests(TestCase):
   def test_creating_active(self):
     """Test creating an active is successful."""
     user = create_user()
-    active = models.Active.objects.create(qty=1, user=user, active=1)
+    active = models.Active.objects.create(qty=1, user=user)
 
-    self.assertEqual(str(active), active.qty)
+    self.assertEqual(str(active), str(active.qty))
 
   def test_creating_heart(self):
     """Test creating an heart is successful."""
     user = create_user()
-    heart = models.Heart.objects.create(qty=1, user=user, heart=1)
+    heart = models.Heart.objects.create(qty=1, user=user)
 
-    self.assertEqual(str(heart), heart.qty)
+    self.assertEqual(str(heart), str(heart.qty))
 
   def test_creating_steps(self):
     """Test creating an steps is successful."""
     user = create_user()
-    steps = models.Steps.objects.create(qty=1, user=user, steps=1)
+    steps = models.Steps.objects.create(qty=1, user=user)
 
-    self.assertEqual(str(steps), steps.qty)
+    self.assertEqual(str(steps), str(steps.qty))
 
   def test_creating_weight(self):
     """Test creating an weight is successful."""
     user = create_user()
-    weight = models.Weight.objects.create(qty=1, user=user, weight=1)
+    weight = models.Weight.objects.create(qty=1, user=user)
 
-    self.assertEqual(str(weight), weight.qty)
+    self.assertEqual(str(weight), str(weight.qty))
