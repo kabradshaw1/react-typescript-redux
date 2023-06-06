@@ -15,4 +15,5 @@ app_name = 'store'
 urlpatterns = [
     path('', include(routes.urls)),
     path('checkout/', checkout, name='checkout'),
+    path('health_check/', health_check, name='health_check')
 ]
