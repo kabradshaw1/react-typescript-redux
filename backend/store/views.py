@@ -1,11 +1,10 @@
 from django.shortcuts import get_object_or_404
-from django.db.models.query import QuerySet
 from user.models import User
 from .models import Item, Order, Category
 from .serializers import ItemSerializer, OrderSerializer, CategorySerializer, CheckoutSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes, action
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework import status, permissions
 from rest_framework.request import Request
 
@@ -24,6 +23,7 @@ class ItemViewSet(viewsets.ModelViewSet):
   def get_object(self, queryset=None, **kwargs):
     slug = self.kwargs.get('pk')
     return get_object_or_404(Item, slug=slug)
+
   def get_queryset(self):
     return Item.objects.all()
 
@@ -31,11 +31,10 @@ class UserRequest(Request):
   user: User
 
 class OrderViewSet(viewsets.ModelViewSet):
-  request: UserRequest
   http_method_names = ['get']
   serializer_class = OrderSerializer
 
-  def get_queryset(self) -> QuerySet[Order]:
+  def get_queryset(self):
     user_id = self.request.user.id
     queryset = Order.objects.filter(user=user_id)
     return queryset
@@ -44,7 +43,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
 def checkout(request):
-  request: UserRequest
   serializer = CheckoutSerializer(data=request.data)
 
   if serializer.is_valid():

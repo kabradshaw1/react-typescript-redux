@@ -1,6 +1,7 @@
 from importlib import import_module
 from user.models import User
 from store.models import Category, Order, OrderedItem, Item
+from fitness.models import Active, Steps, Heart, Demo, Weight
 from django.conf import settings
 from django.test.runner import DiscoverRunner
 
@@ -19,6 +20,11 @@ class BackendTestRunner(DiscoverRunner):
     self.item = Item.objects.create(name='stuff', price='1', image='test.jpg', slug='test', description='test test test', quantity=200, category_id=1,)
     self.order = Order.objects.create(user_id=1, price='1')
     self.ordereditem = OrderedItem.objects.create(item_id=1, order_id=1, cartQty=1, price="1")
+    self.active = Active.objects.create(qty=1, user_id=1)
+    self.steps = Steps.objects.create(qty=1, user_id=1)
+    self.heart = Heart.objects.create(qty=1, user_id=1)
+    self.demo = Demo.objects.create(active=1, heart=1, steps=1, weight=1)
+    self.weight = Weight.objects.create(qty=1, user_id=1)
     return r
 
   @classmethod
