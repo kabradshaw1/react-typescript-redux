@@ -1,7 +1,6 @@
-from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
-from store.views import ItemViewSet, OrderViewSet, CategoryViewSet, checkout, health_check
+from .views import ItemViewSet, OrderViewSet, CategoryViewSet, checkout, health_check
 
 routes = SimpleRouter()
 
