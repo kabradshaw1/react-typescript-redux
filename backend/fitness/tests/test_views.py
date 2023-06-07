@@ -15,7 +15,6 @@ class FitnessAPITests(APITestCase):
   }
 
   def test_get_demo(self):
-    self.client.force_authenticate(user=self.user)
     response = self.client.get(f"{self.base_url_demo}")
     self.assertEqual(response.status_code, status.HTTP_200_OK)
 

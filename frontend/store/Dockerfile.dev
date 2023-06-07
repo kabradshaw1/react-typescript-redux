@@ -1,6 +1,5 @@
 FROM node:18.16-alpine3.17
 WORKDIR /frontend
 COPY package*.json ./
-COPY yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN npm i
 COPY . /frontend
