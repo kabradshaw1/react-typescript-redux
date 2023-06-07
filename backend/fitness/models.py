@@ -6,6 +6,7 @@ class Demo(models.Model):
   heart = models.IntegerField()
   weight = models.IntegerField()
   steps = models.IntegerField()
+  created = models.DateTimeField()
 
   def __str__(self):
     return f'{self.active}'
