@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../store/slices/cartSlice';
-import { Items } from '../../utils/types';
+import { addItem } from '../../../store/slices/cartSlice';
+import { Items } from '../../../utils/types';
 
 const ItemCard: React.FC<Items> = ({ id, price, name, description, category, image, quantity, slug }) => {
   const dispatch = useDispatch();

@@ -50,7 +50,7 @@ function Login() {
         );
         dispatch(authSlice.actions.setAccount(res.data.user));
         setLoading(false);
-        navigate("/");
+        navigate("/store");
       })
       .catch((err) =>{
         setLoading(false);

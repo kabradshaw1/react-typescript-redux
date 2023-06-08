@@ -2,12 +2,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import RegisterUser from './pages/RegisterUser';
-import LoginUser from './pages/LoginUser';
-import Home from './pages/Home';
-import Detail from './pages/Detail';
-import CheckOut from './pages/CheckOut';
-import OrderCompleted from './pages/OrderCompleted';
+import RegisterUser from './user/RegisterUser';
+import LoginUser from './user/LoginUser';
+import Home from './ecommerce/pages/Home';
+import Detail from './ecommerce/pages/Detail';
+import CheckOut from './ecommerce/pages/CheckOut';
+import OrderCompleted from './ecommerce/pages/OrderCompleted';
 import Container  from 'react-bootstrap/Container';
 
 function App() {

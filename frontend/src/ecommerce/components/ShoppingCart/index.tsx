@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../../../store';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
-import { CartItems } from '../../utils/types';
-import { emptyCart } from '../../store/slices/cartSlice';
+import { CartItems } from '../../../utils/types';
+import { emptyCart } from '../../../store/slices/cartSlice';
 import ItemDetail from '../ItemDetail';
 
 const ShoppingCart = () => {

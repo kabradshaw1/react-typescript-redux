@@ -1,10 +1,10 @@
-import {incrementcartQty, decrementcartQty, removeItem} from '../../store/slices/cartSlice';
+import {incrementcartQty, decrementcartQty, removeItem} from '../../../store/slices/cartSlice';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import Row from 'react-bootstrap/Row';
-import { CartItems } from '../../utils/types';
+import { CartItems } from '../../../utils/types';
 
 const ItemDetail: React.FC<CartItems> = ({name, cartQty, price, id}) => {
   const dispatch = useDispatch();

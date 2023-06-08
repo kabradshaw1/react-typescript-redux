@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../../../store';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { CartItems } from '../../utils/types';
+import { CartItems } from '../../../utils/types';
 import ItemDetail from '../../components/ItemDetail';
-import { emptyCart } from '../../store/slices/cartSlice';
-import axiosInstance from '../../utils/axios';
+import { emptyCart } from '../../../store/slices/cartSlice';
+import axiosInstance from '../../../utils/axios';
 
 const CheckOut: React.FC = () => {
   const [loading, setLoading] = useState(false);

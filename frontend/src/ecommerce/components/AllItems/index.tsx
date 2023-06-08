@@ -1,10 +1,10 @@
 import ItemCard from '../ItemCard';
 import useSWR from 'swr';
-import { fetcher } from '../../utils/axios';
+import { fetcher } from '../../../utils/axios';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Items } from '../../utils/types';
+import { Items } from '../../../utils/types';
 
 
 

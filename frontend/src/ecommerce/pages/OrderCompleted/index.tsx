@@ -1,11 +1,11 @@
 import useSWR from 'swr';
-import { fetcher } from '../../utils/axios';
-import { Order, OrderedItems } from '../../utils/types';
+import { fetcher } from '../../../utils/axios';
+import { Order, OrderedItems } from '../../../utils/types';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import formatDate from '../../utils/format-date';
+import formatDate from '../../../utils/format-date';
 
 const OrderCompleted = () => {
   const { data: orders, error, isLoading } = useSWR<Order[]>('/store/order/', fetcher)

@@ -1,8 +1,8 @@
 import useSWR from 'swr';
-import { fetcher } from '../../utils/axios';
+import { fetcher } from '../../../utils/axios';
 import { useParams, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import { Items } from '../../utils/types';
+import { Items } from '../../../utils/types';
 
 const Detail: React.FC = () => {
   const { id } = useParams();
@@ -17,6 +17,7 @@ const Detail: React.FC = () => {
         <>
           <Link to="/store/">← Back to Products</Link>
           <h2>{item.name}</h2>
+          <p>This page has loaded properly, but is still under construction.</p>
         </>
       ): null}
     </Container>
