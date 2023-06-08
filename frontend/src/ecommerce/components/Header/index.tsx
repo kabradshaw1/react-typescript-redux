@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../../../store';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import authSlice from '../../store/slices/authSlice';
+import authSlice from '../../../store/slices/authSlice';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 export default function Header() {
