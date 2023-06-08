@@ -17,12 +17,12 @@ function App() {
         <Header/>
         <Container fluid as='main'>
           <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/store' element={<Home/>}/>
             <Route path='/register' element={<RegisterUser/>}/>
             <Route path='/login' element={<LoginUser/>}/>
-            <Route path='/checkout' element={<CheckOut/>}/>
-            <Route path='/item/:id' element={<Detail/>}/>
-            <Route path='/order_completed' element={<OrderCompleted/>}/>
+            <Route path='/store/checkout' element={<CheckOut/>}/>
+            <Route path='/store/item/:id' element={<Detail/>}/>
+            <Route path='/store/order_completed' element={<OrderCompleted/>}/>
           </Routes>
         </Container>
         <Footer/>

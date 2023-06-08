@@ -15,7 +15,7 @@ const Detail: React.FC = () => {
     <Container>
       {item ? (
         <>
-          <Link to="/">← Back to Products</Link>
+          <Link to="/store/">← Back to Products</Link>
           <h2>{item.name}</h2>
         </>
       ): null}

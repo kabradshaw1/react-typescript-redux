@@ -39,7 +39,7 @@ const CheckOut: React.FC = () => {
     .then(() => {
       setLoading(false);
       dispatch(emptyCart())
-      navigiate('/order_completed')
+      navigiate('/store/order_completed')
     })
     .catch((err) => {
       setLoading(false);
