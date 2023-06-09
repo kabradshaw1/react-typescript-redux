@@ -4,22 +4,46 @@ import useSWR from 'swr';
 import { fetcher } from '../../../utils/axios';
 import Table from '../../components/Table';
 import Container from 'react-bootstrap/Container';
+import { Data } from '../../../utils/types'
 
 interface Demo {
+  id: number,
   active: string,
   heart: string,
   date: Date,
   steps: string,
   weight: string,
 }
+
 const FitnessHome: React.FC = () => {
-  const {data: demo, error, isLoading } = useSWR<Demo[]>('/fitness/demo/', fetcher);
+  const {data: demo, error, isLoading } = useSWR<Demo[] | undefined>('/fitness/demo/', fetcher);
+    // Transform the data into an array of FitnessData objects
+
   if(error) return <Container><h3>Failed to load.</h3></Container>
   if(isLoading) return <Container><h3>Loading...</h3></Container>
+  if(!demo) return null;
+
+  const activeData: Data[] = demo && demo.map(item => ({
+    date: item.date,
+    data: item.active,
+  }));
+  const heartData: Data[] = demo && demo.map(item => ({
+    date: item.date,
+    data: item.heart,
+  }));
+  const stepsData: Data[] = demo && demo.map(item => ({
+    date: item.date,
+    data: item.steps,
+  }));
+  const weightData: Data[] = demo && demo.map(item => ({
+    date: item.date,
+    data: item.weight,
+  }));
+
   return (
     <Container>
       <Row>
-        <h1>Fitness Home</h1>
+        <Table data={activeData}/>
       </Row>
     </Container>
   )

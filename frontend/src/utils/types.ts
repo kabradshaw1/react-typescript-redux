@@ -54,3 +54,8 @@ export interface OrderedItems {
   price: number,
   id: number,
 }
+
+export interface Data {
+  date: Date,
+  data: string,
+}
