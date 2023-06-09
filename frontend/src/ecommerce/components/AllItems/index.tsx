@@ -10,7 +10,7 @@ import { Items } from '../../../utils/types';
 
 const AllItems: React.FC = () => {
   const { data: items, error, isLoading } = useSWR<Items[]>('/store/item/', fetcher);
-  if(error) return <Container><h3>Failed to load</h3></Container>
+  if(error) return <Container><h3>Failed to load.</h3></Container>
   if(isLoading) return <Container><h3>Loading...</h3></Container>
 
   return (
