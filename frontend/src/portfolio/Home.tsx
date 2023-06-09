@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { Container, Row, Button, Card } from 'react-bootstrap';
+import { Container, Row, Button, Card, Col } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import profileImage from "../../assets/img/profile/profile.jpg";
 
-const PortfolioProjects: React.FC = () => {
+const Home: React.FC = () => {
   const [featured] = useState([
     // {
     //   name: 'National Parks Search Engine',
@@ -15,9 +16,9 @@ const PortfolioProjects: React.FC = () => {
     {
       name: 'Fitness Tracker',
       description: 'This project displays fitness measurements such as daily max heart rate on a bar graph.  It has an Express.js server that allows you to store the data in a MySQL database.  It also demonstrates MVC and ORM.',
-      tech: 'ORM, MySQL, SQL, MVC, Restful API, Express.js',
+      tech: 'Django, React, d3.js, TypeScript, Jest Testing',
       github: 'https://github.com/kabradshaw1/Fitness-Tracker',
-      deployed: 'https://secure-gorge-89550.herokuapp.com/',
+      deployed: 'fitness',
       screenshot: 'Fitness'
     },
     {
@@ -25,16 +26,35 @@ const PortfolioProjects: React.FC = () => {
       description: 'This app will allow creating users, posting, and responding to posts.  I\'m still very actively working on this',
       tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
       github: 'https://github.com/kabradshaw1/React-Django-REST-PostgreSQL',
-      deployed: 'https://serene-tor-73175.herokuapp.com/',
+      deployed: 'store',
       screenshot: 'django'
     },
   ]);
   return (
     <>
-
+    <Container>
+      <Card id='about-me'>
+        <Row>
+          <Col>
+            <Card.Img  variant='top' src={profileImage}/>
+          </Col>
+          <Col>
+            <Card.Text >
+              Hello, my name is Kyle. I'm a full stack web developer. I'm currently seeking my first full time position
+              as a web developer and continuing to teach myself TypeScript and Python.   I recently completed a six month coding
+              bootcamp at UNC learning a variety of front
+              and back end technologies.  I've worked as an engineer for power and communications for six years, working with
+              electrical and structural engineering.  I have an ABET accredited BS in Engineering Technology from Western
+              Carolina University.
+            </Card.Text >
+          </Col>
+        </Row>
+      </Card>
+    </Container>
     <Container fluid>
       <h2>Featured Projects</h2>
-      <p>These first two projects are from UNC Coding Bootcamp.  The Django project I’ve done completely independently.  </p>
+      <p>I have invested many hours into these projects, and I believe they do an excellent job of showcasing
+        my experience with Django and React apps.  </p>
       <Row md={3} sm={1}>
           {featured.map((project)=> (
             <Card className='m-1 bg-secondary'>
@@ -61,4 +81,4 @@ const PortfolioProjects: React.FC = () => {
   )
 }
 
-export default PortfolioProjects;
+export default Home;
