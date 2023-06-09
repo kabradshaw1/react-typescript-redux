@@ -36,12 +36,12 @@ services:
 
   frontend:
     build:
-      context: ./frontend/fitness
+      context: ./frontend
       dockerfile: Dockerfile.dev
     command: >
       sh -c "npm start"
     volumes:
-       - ./frontend/fitness/src:/frontend/fitness/src
+       - ./frontend/src:/frontend/src
     ports:
       - "3000:3000"
     environment:

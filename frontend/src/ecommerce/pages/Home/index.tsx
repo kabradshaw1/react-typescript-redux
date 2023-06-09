@@ -1,10 +1,10 @@
-import React from 'react'
-import AllItems from '../../components/AllItems'
-import ShoppingCart from '../../components/ShoppingCart'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import React from 'react';
+import AllItems from '../../components/AllItems';
+import ShoppingCart from '../../components/ShoppingCart';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-const Home: React.FC = () => {
+const StoreHome: React.FC = () => {
   return (
     <Row>
       <Col>
@@ -17,4 +17,4 @@ const Home: React.FC = () => {
   )
 };
 
-export default Home;
+export default StoreHome;

@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
 import { Container, Row, Button, Card } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const PortfolioProjects: React.FC = () => {
   const [featured] = useState([
-    {
-      name: 'National Parks Search Engine',
-      description: 'This project serves to provide access to the APIs provided by nps.gov.  There is still a little work I would like to do for this project.',
-      tech: 'MERN, NoSQL, GraphQL, API, React, MangoDB, Express.js',
-      gitub: 'https://github.com/kabradshaw1/National-Parks',
-      deployed: 'https://evening-reaches-42082.herokuapp.com/',
-      screenshot: 'National-Parks'
-    },
+    // {
+    //   name: 'National Parks Search Engine',
+    //   description: 'This project serves to provide access to the APIs provided by nps.gov.  There is still a little work I would like to do for this project.',
+    //   tech: 'MERN, NoSQL, GraphQL, API, React, MangoDB, Express.js',
+    //   gitub: 'https://github.com/kabradshaw1/National-Parks',
+    //   deployed: 'https://evening-reaches-42082.herokuapp.com/',
+    //   screenshot: 'National-Parks'
+    // },
     {
       name: 'Fitness Tracker',
       description: 'This project displays fitness measurements such as daily max heart rate on a bar graph.  It has an Express.js server that allows you to store the data in a MySQL database.  It also demonstrates MVC and ORM.',
@@ -20,9 +21,9 @@ const PortfolioProjects: React.FC = () => {
       screenshot: 'Fitness'
     },
     {
-      name: 'Kyle\'s Social Network',
+      name: 'Kyle\'s Store',
       description: 'This app will allow creating users, posting, and responding to posts.  I\'m still very actively working on this',
-      tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, Formkin, Yup',
+      tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
       github: 'https://github.com/kabradshaw1/React-Django-REST-PostgreSQL',
       deployed: 'https://serene-tor-73175.herokuapp.com/',
       screenshot: 'django'
@@ -46,7 +47,9 @@ const PortfolioProjects: React.FC = () => {
                   <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
                   <Card.Text>{project.tech}</Card.Text>
                 </Card.Text>
-                <Button variant='primary' className='me-1' href={project.deployed}>Deployed Site</Button>
+                <LinkContainer to={`/${project.deployed}/`}>
+                  <Button variant='primary' className='me-1'>Deployed Site</Button>
+                </LinkContainer>
                 <Button variant='primary' href={project.github}>GitHub Repository</Button>
               </Card.Body>
             </Card>
