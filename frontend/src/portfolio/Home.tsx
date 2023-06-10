@@ -17,15 +17,15 @@ const Home: React.FC = () => {
       name: 'Fitness Tracker',
       description: 'This project displays fitness measurements such as daily max heart rate on a bar graph.  It has an Express.js server that allows you to store the data in a MySQL database.  It also demonstrates MVC and ORM.',
       tech: 'Django, React, d3.js, TypeScript, Jest Testing',
-      github: 'https://github.com/kabradshaw1/Fitness-Tracker',
+      github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'fitness',
-      screenshot: 'Fitness'
+      screenshot: 'fitness'
     },
     {
       name: 'Kyle\'s Store',
       description: 'This app will allow creating users, posting, and responding to posts.  I\'m still very actively working on this',
       tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
-      github: 'https://github.com/kabradshaw1/React-Django-REST-PostgreSQL',
+      github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'store',
       screenshot: 'django'
     },
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
       <Row md={3} sm={1}>
           {featured.map((project)=> (
             <Card className='m-1 bg-secondary'>
-              <Card.Img className='mt-1' variant='top' src={require('../../assets/img/screen_shots/' + project.screenshot + '.PNG')} ></Card.Img>
+              <Card.Img className='mt-1' variant='top' src={require('../../public/images/' + project.screenshot + '.PNG')} ></Card.Img>
               <Card.Body>
                 <Card.Title><h3>{project.name}</h3></Card.Title>
                 <Card.Text>
