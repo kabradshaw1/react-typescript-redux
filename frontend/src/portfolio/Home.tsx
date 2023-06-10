@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       tech: 'Django, React, d3.js, TypeScript, Jest Testing',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'fitness',
-      screenshot: 'fitness'
+      image: 'fitness.png'
     },
     {
       name: 'Kyle\'s Store',
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'store',
-      screenshot: 'django'
+      image: 'django.PNG'
     },
   ]);
   return (
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       <Card id='about-me'>
         <Row>
           <Col>
-            <Card.Img  variant='top' src={profileImage}/>
+            <Card.Img  variant='top' src={`/images/portfolio/profile.JPG`}/>
           </Col>
           <Col>
             <Card.Text >
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
       <Row md={3} sm={1}>
           {featured.map((project)=> (
             <Card className='m-1 bg-secondary'>
-              <Card.Img className='mt-1' variant='top' src={require('../../public/images/' + project.screenshot + '.PNG')} ></Card.Img>
+              <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} ></Card.Img>
               <Card.Body>
                 <Card.Title><h3>{project.name}</h3></Card.Title>
                 <Card.Text>
