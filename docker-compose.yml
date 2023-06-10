@@ -33,6 +33,8 @@ services:
       - ./seed.sql:/tmp/seed.sql
     ports:
       - "5433:5432"
+    command: >
+      sh -c "psql -U devuser -d devdb -f /tmp/seed.sql"
 
   frontend:
     build:

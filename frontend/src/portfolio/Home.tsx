@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           <Col>
             <Card.Text >
               Hello, my name is Kyle. I'm a full stack web developer. I'm currently seeking my first full time position
-              as a web developer and continuing to teach myself TypeScript and Python.   I recently completed a six month coding
+              as a web developer and continuing to teach myself TypeScript, Python and Docker.   I recently completed a six month coding
               bootcamp at UNC learning a variety of front
               and back end technologies.  I've worked as an engineer for power and communications for six years, working with
               electrical and structural engineering.  I have an ABET accredited BS in Engineering Technology from Western
