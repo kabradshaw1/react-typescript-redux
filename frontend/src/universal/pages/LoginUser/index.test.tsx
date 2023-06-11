@@ -2,7 +2,7 @@ import React from "react";
 import '@testing-library/jest-dom'
 import {fireEvent, render, screen} from "@testing-library/react";
 import LoginUser from "./index";
-import store from '../../store'
+import store from '../../../store'
 import {Provider} from "react-redux";
 
 const renderLogin = () => {

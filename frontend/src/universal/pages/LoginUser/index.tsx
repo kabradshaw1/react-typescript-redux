@@ -3,13 +3,13 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import authSlice from '../../store/slices/authSlice';
+import authSlice from '../../../store/slices/authSlice';
 import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import axiosInstance from '../../utils/axios';
+import axiosInstance from '../../../utils/axios';
 
 type Inputs = {
   email: string,
