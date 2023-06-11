@@ -34,7 +34,7 @@ export default function Header() {
     <Navbar as='header' bg="light" expand="lg" className='sticky-top'>
       <Container>
         <LinkContainer to=''>
-          <Navbar.Brand>Kyle's Store</Navbar.Brand>
+          <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

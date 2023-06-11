@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../../utils/axios';
+import axiosInstance from '../../../utils/axios';
 
 type Inputs = {
   email: string,

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Container, Row, Button, Card, Col } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import profileImage from "../../assets/img/profile/profile.jpg";
+import PortfolioHeader from './Header';
 
 const Home: React.FC = () => {
   const [featured] = useState([
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     // },
     {
       name: 'Fitness Tracker',
-      description: 'This project displays fitness measurements such as daily max heart rate on a bar graph.  It has an Express.js server that allows you to store the data in a MySQL database.  It also demonstrates MVC and ORM.',
+      description: 'This project displays fitness measurements such as daily max heart rate on a bar graph using the D3.js library.',
       tech: 'Django, React, d3.js, TypeScript, Jest Testing',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'fitness',
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     },
     {
       name: 'Kyle\'s Store',
-      description: 'This app will allow creating users, posting, and responding to posts.  I\'m still very actively working on this',
+      description: 'This application lays the ground work for a fully functional ecommerce site.  ',
       tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'store',
@@ -32,8 +32,9 @@ const Home: React.FC = () => {
   ]);
   return (
     <>
+    <PortfolioHeader/>
     <Container>
-      <Card id='about-me'>
+      <Card id='about-me' className='bg-secondary'>
         <Row>
           <Col>
             <Card.Img  variant='top' src={`/images/portfolio/profile.JPG`}/>

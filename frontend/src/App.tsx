@@ -1,9 +1,9 @@
-import Header from './ecommerce/components/Header';
-import Footer from './ecommerce/components/Footer';
+import Header from './universal/components/Header';
+import Footer from './universal/components/Footer';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import RegisterUser from './user/RegisterUser';
-import LoginUser from './user/LoginUser';
+import RegisterUser from './universal/pages/RegisterUser';
+import LoginUser from './universal/pages/LoginUser';
 import Detail from './ecommerce/pages/Detail';
 import CheckOut from './ecommerce/pages/CheckOut';
 import Home from './portfolio/Home';
