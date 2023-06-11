@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import authSlice from '../../../store/slices/authSlice';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-
+import './index.css'
 export default function Header() {
 
   const cart = useSelector((state: RootState) => state.cart);
@@ -31,7 +31,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar as='header' bg="light" expand="lg" className='sticky-top'>
+    <Navbar as='header' bg="light" expand="lg" className='sticky-top header'>
       <Container>
         <LinkContainer to=''>
           <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>

@@ -4,16 +4,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import './index.css'
 
-const PortfolioHeader: React.FC = () => {
+
+const StoreHeader: React.FC = () => {
   return (
     <Navbar as='header' bg='primary' expand="lg" className='sticky-top sub-header'>
       <Container>
         <LinkContainer to=''>
-          <Navbar.Brand>Kyle's Bio & Project Links</Navbar.Brand>
+          <Navbar.Brand>Kyle's Store</Navbar.Brand>
         </LinkContainer>
       </Container>
     </Navbar>
   )
 };
 
-export default PortfolioHeader;
+export default StoreHeader;
