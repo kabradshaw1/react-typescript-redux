@@ -23,7 +23,26 @@ const Table: React.FC<Props> = ({ data }) => {
         .domain([0, Math.max(...data.map(({ data }) => data))])
         .range([height, 0])
 
-      const chart = d3.select(ref.current);
+      const chart = d3.select(ref.current)
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const bar = chart
+        .selectAll('.bar')
+        .data(data)
+        .enter()
+        .append('rect')
+        .classed('bar', true)
+        .attr('width', xScale.bandwidth())
+        .attr('height', d => height - yScale(d.data))
+        .attr('x', d => {
+           const value = xScale(d.created)
+           return (value !== undefined) ? value :0;
+        })
+        .attr('y', d => yScale(d.data));
 
     }
   }, [data]);

@@ -58,4 +58,5 @@ export interface OrderedItems {
 export interface Data {
   created: string,
   data: number,
+  id: number
 }
