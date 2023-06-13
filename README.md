@@ -13,9 +13,9 @@ This project is for the purpose of learning about integrating these three techno
 
 * Clone this repository
 * in the command line type: docker-compose up -d
-* in the command line type: docker-compose exec db sh
-* in the command line type: psql -U devuser -d devdb
-* in the command line type: i\ /tmp/seed.sql
+* in the command line type: docker-compose exec db sh, or you can execute the next command in the termal for the db container from the desktop app
+* in the command line type: psql -U devuser -d devdb -f /tmp/seed.sql
+
 
 ### Without Docker
 

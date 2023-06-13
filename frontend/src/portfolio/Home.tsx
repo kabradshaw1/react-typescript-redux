@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         </Row>
       </Card>
     </Container>
-    <Container fluid>
+    <Container>
       <h2>Featured Projects</h2>
       <p>I have invested many hours into these projects, and I believe they do an excellent job of showcasing
         my experience with Django and React apps.  </p>

@@ -10,7 +10,7 @@ interface Demo {
   id: number,
   active: string,
   heart: string,
-  date: Date,
+  created: Date,
   steps: string,
   weight: string,
 }
@@ -18,28 +18,28 @@ interface Demo {
 const FitnessHome: React.FC = () => {
   const {data: demo, error, isLoading } = useSWR<Demo[] | undefined>('/fitness/demo/', fetcher);
     // Transform the data into an array of FitnessData objects
-
+  console.log(demo)
   if(error) return <Container><h3>Failed to load.</h3></Container>
   if(isLoading) return <Container><h3>Loading...</h3></Container>
   if(!demo) return null;
 
   const activeData: Data[] = demo && demo.map(item => ({
-    date: item.date,
+    created: item.created,
     data: item.active,
   }));
   const heartData: Data[] = demo && demo.map(item => ({
-    date: item.date,
+    created: item.created,
     data: item.heart,
   }));
   const stepsData: Data[] = demo && demo.map(item => ({
-    date: item.date,
+    created: item.created,
     data: item.steps,
   }));
   const weightData: Data[] = demo && demo.map(item => ({
-    date: item.date,
+    created: item.created,
     data: item.weight,
   }));
-
+  console.log(activeData)
   return (
     <Container>
       <Row>
