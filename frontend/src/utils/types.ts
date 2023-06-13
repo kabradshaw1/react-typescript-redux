@@ -56,6 +56,6 @@ export interface OrderedItems {
 }
 
 export interface Data {
-  created: Date,
-  data: string,
+  created: string,
+  data: number,
 }

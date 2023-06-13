@@ -8,11 +8,11 @@ import { Data } from '../../../utils/types'
 
 interface Demo {
   id: number,
-  active: string,
-  heart: string,
-  created: Date,
-  steps: string,
-  weight: string,
+  active: number,
+  heart: number,
+  created: string,
+  steps: number,
+  weight: number,
 }
 
 const FitnessHome: React.FC = () => {
