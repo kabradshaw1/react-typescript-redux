@@ -15,6 +15,11 @@ const Table: React.FC<Props> = ({ data }) => {
       const width = 960 - margin.left - margin.right;
       const height = 500 - margin.top - margin.bottom;
 
+      // Clear the container
+      if (ref.current) {
+        ref.current.innerHTML = '';
+      };
+      
       const xScale = d3.scaleBand()
         .domain(data.map(d => d.created))
         .rangeRound([0, width]).padding(0.1)
