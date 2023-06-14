@@ -11,7 +11,7 @@ const LoggedIn: React.FC = () => {
 
   const currentFitness = useSelector((state: RootState) => state.fitness.value);
   console.log(currentFitness)
-  const {data: qty, error, isLoading } = useSWR<Data[]>(`/fitness/`, fetcher);
+  const {data: qty, error, isLoading } = useSWR<Data[]>(`/fitness/${currentFitness}/`, fetcher);
 
   if(error) return <Container><h3>Failed to load.</h3></Container>
   if(isLoading) return <Container><h3>Loading...</h3></Container>
