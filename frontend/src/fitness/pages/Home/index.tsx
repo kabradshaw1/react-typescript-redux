@@ -46,10 +46,14 @@ const FitnessHome: React.FC = () => {
   return (
     <Container fluid>
       <Row>
-        <h1>Active Energy</h1>
+        <h2>Active Energy</h2>
         <Table data={activeData}/>
-        <h1>Weight</h1>
+        <h2>Weight</h2>
         <Table data={weightData}/>
+        <h2>Steps</h2>
+        <Table data={stepsData}/>
+        <h2> Max Heart Rate</h2>
+        <Table data={heartData}/>
       </Row>
     </Container>
   )
