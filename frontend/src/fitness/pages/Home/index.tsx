@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { fetcher } from '../../../utils/axios';
 import Table from '../../components/Table';
 import Container from 'react-bootstrap/Container';
-import { Data } from '../../../utils/types'
+import { Data } from '../../../utils/types';
 
 interface Demo {
   id: number,
@@ -44,18 +44,20 @@ const FitnessHome: React.FC = () => {
   }));
 
   return (
-    <Container fluid>
-      <Row>
-        <h2>Active Energy</h2>
-        <Table data={activeData}/>
-        <h2>Weight</h2>
-        <Table data={weightData}/>
-        <h2>Steps</h2>
-        <Table data={stepsData}/>
-        <h2> Max Heart Rate</h2>
-        <Table data={heartData}/>
-      </Row>
-    </Container>
+    <>
+      <Container fluid>
+        <Row>
+          <h2>Active Energy</h2>
+          <Table data={activeData}/>
+          <h2>Weight</h2>
+          <Table data={weightData}/>
+          <h2>Steps</h2>
+          <Table data={stepsData}/>
+          <h2> Max Heart Rate</h2>
+          <Table data={heartData}/>
+        </Row>
+      </Container>
+    </>
   )
 };
 

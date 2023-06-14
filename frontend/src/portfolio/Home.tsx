@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Container, Row, Button, Card, Col } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import PortfolioHeader from './Header';
 
 const Home: React.FC = () => {
   const [featured] = useState([
@@ -32,7 +31,6 @@ const Home: React.FC = () => {
   ]);
   return (
     <>
-    <PortfolioHeader/>
     <Container>
       <Card id='about-me' className='bg-secondary'>
         <Row>
