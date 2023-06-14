@@ -10,7 +10,7 @@ type Input = {
   qty: number
 }
 
-const InputBox: React.FC = (prop) => {
+const InputBox: React.FC<{ endpointProp: string }> = (prop) => {
 
   const [loading, setLoading] = useState(false)
 
