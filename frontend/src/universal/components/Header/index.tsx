@@ -11,6 +11,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import FitnessHeader from './subheaders/FitnessSubHeader';
 import StoreHeader from './subheaders/StoreSubHeader';
 import PortfolioHeader from './subheaders/PortfolioSubHeader';
+import './index.css'
 
 export default function Header() {
 
@@ -48,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <Container fluid className='sticky-top' as='header'>
+    <Container fluid className='sticky-top header' as='header'>
       <Navbar bg="light" expand="lg" >
         <Container>
           <LinkContainer to=''>

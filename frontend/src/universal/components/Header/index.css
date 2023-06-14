@@ -1,0 +1,11 @@
+.header {
+  z-index: 2;
+}
+
+.subheader {
+  z-index: 1;
+}
+
+.navbar-collapse .dropdown-menu {
+  z-index: 3;
+}

@@ -5,10 +5,10 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const StoreHeader: React.FC = () => {
   return (
-    <Navbar as='header' bg='primary' expand="lg" className='sticky-top sub-header'>
+    <Navbar as='header' bg='light' expand="lg" className='sticky-top subheader'>
       <Container>
         <LinkContainer to=''>
-          <Navbar.Brand>Kyle's Store</Navbar.Brand>
+          <Navbar.Brand>Store</Navbar.Brand>
         </LinkContainer>
       </Container>
     </Navbar>
