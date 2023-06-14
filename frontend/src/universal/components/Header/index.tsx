@@ -59,10 +59,10 @@ export default function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               {isLoggedIn
-              ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-              : <LinkContainer to='/login'>
-                  <Nav.Link>Login</Nav.Link>
-                </LinkContainer>
+                ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                : <LinkContainer to='/login'>
+                    <Nav.Link>Login</Nav.Link>
+                  </LinkContainer>
               }
               <LinkContainer to='register'>
                 <Nav.Link>Register</Nav.Link>
