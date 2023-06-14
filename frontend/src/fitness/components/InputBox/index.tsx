@@ -34,7 +34,7 @@ const InputBox: React.FC<{ endpointProp: string }> = (prop) => {
 
   return (
     <Form noValidate onSubmit={handleSubmit(formSubmit)}>
-      <Form.Label><h3>Data Input</h3></Form.Label>
+      <Form.Label><h3>{prop.endpointProp} Input</h3></Form.Label>
       <Form.Control type='number' {...register('qty')} className={`form-control ${errors.qty ? 'is-invalid' : ""}`}/>
       <Form.Control.Feedback className="invalid-feedback">{errors.qty?.message}</Form.Control.Feedback>
       <Button type="submit" disabled={loading}>Submit Form</Button>

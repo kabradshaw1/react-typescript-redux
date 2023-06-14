@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface FitnessState {
-  value: 'active' | 'heart' | 'steps' | 'weight'
+  value: 'Active' | 'Heart' | 'Steps' | 'Weight'
 }
 
 const initialState: FitnessState = {
-  value: 'active'
+  value: 'Active'
 }
 const fitnessSlice = createSlice({
   name: 'fitness',
