@@ -5,6 +5,7 @@ import { fetcher } from '../../../utils/axios';
 import useSWR from 'swr';
 import Container from 'react-bootstrap/Container';
 
+
 const LoggedIn: React.FC = () => {
   const {data: qty, error, isLoading } = useSWR<Data[]>(`/fitness/`, fetcher);
   if(error) return <Container><h3>Failed to load.</h3></Container>

@@ -14,10 +14,12 @@ import {
 import storage from "redux-persist/lib/storage";
 import authSlice from "./slices/authSlice";
 import cartSlice from "./slices/cartSlice";
+import fitnessSlice from "./slices/fitnessSlice";
 
 const rootReducer = combineReducers({
   auth: authSlice.reducer,
-  cart: cartSlice.reducer
+  cart: cartSlice.reducer,
+  fitness: fitnessSlice.reducer,
 });
 
 const persistedReducer = persistReducer(
