@@ -74,8 +74,8 @@ function Login() {
           </Form.Group>
           <Form.Label>{message}</Form.Label>
         </Col>
-      <Button type="submit" disabled={loading}>Submit Form</Button>
-    </Form>
+        <Button type="submit" disabled={loading}>Submit Form</Button>
+      </Form>
   )
 }
 export default Login;

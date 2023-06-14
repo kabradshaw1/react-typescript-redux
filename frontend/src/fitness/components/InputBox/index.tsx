@@ -7,28 +7,37 @@ import * as Yup from 'yup';
 import axiosInstance from '../../../utils/axios';
 
 type Input = {
-  data: number
+  qty: number
 }
 
-const InputBox: React.FC = () => {
+const InputBox: React.FC = (prop) => {
 
   const [loading, setLoading] = useState(false)
 
   const validationSchema = Yup.object().shape({
-    data: Yup.string().required('Must input a value.')
-  })
+    qty: Yup.number().required('Must input a value.')
+  });
 
   const { register, handleSubmit, formState:{errors} } = useForm<Input>(
     {resolver: yupResolver(validationSchema)}
   );
 
-  const formSubmit: SubmitHandler<Input> = data => {
-
+  const formSubmit: SubmitHandler<Input> = qty => {
+    setLoading(true);
+    axiosInstance
+      .post(`fitness/${prop}/`, qty)
+      .then(res => {
+        console.log(res);
+        setLoading(false);
+      })
   };
 
   return (
-    <Form>
-      <Form.Label><h3></h3></Form.Label>
+    <Form noValidate onSubmit={handleSubmit(formSubmit)}>
+      <Form.Label><h3>Data Input</h3></Form.Label>
+      <Form.Control type='number' {...register('qty')} className={`form-control ${errors.qty ? 'is-invalid' : ""}`}/>
+      <Form.Control.Feedback className="invalid-feedback">{errors.qty?.message}</Form.Control.Feedback>
+      <Button type="submit" disabled={loading}>Submit Form</Button>
     </Form>
   )
 }
