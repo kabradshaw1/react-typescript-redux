@@ -36,8 +36,8 @@ services:
 
   nginx:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile.nginx
+      context: ./nginx
+      dockerfile: Dockerfile
     restart: on-failure
     ports:
       - 80:8080
