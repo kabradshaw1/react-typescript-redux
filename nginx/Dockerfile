@@ -8,5 +8,5 @@ RUN npm run build
 
 # Nginx stage
 FROM nginx:1.21-alpine
-COPY --from=builder build /var/www/frontend
+COPY --from=builder /frontend/build /var/www/frontend
 COPY ./nginx/nginx-setup.conf /etc/nginx/conf.d/default.conf

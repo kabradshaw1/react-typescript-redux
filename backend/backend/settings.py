@@ -18,13 +18,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ec2-52-91-48-17.compute-1.amazonaws.com']
-# ALLOWED_HOSTS.extend(
-#     filter(
-#         None,
-#         os.environ.get('ALLOWED_HOSTS', '').split(','),
-#     )
-# )
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS').split(',')
 
 AUTH_USER_MODEL = 'user.User'
 
@@ -145,10 +141,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-
-CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://ec2-52-91-48-17.compute-1.amazonaws.com']
-
-# CORS_ALLOW_ALL_ORIGINS: True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
