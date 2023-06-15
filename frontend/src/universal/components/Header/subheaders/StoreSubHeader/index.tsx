@@ -23,12 +23,12 @@ const StoreHeader: React.FC = () => {
   return (
     <Navbar bg='light' expand="lg" className='sticky-top subheader'>
       <Container>
-        <LinkContainer to='/store'>
-          <Navbar.Brand>Store</Navbar.Brand>
-        </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
+            <LinkContainer to='/store'>
+              <Navbar.Brand>Store</Navbar.Brand>
+            </LinkContainer>
             {isLoggedIn
               ? <LinkContainer to='/checkout'>
                   <Nav.Link>Checkout <AiOutlineShoppingCart/>: {getCartQauntity() | 0} </Nav.Link>
