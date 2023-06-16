@@ -5,16 +5,19 @@ This project is for the purpose of learning about integrating these three techno
 
 ## Deployed Site
 
-[Store](http://ec2-52-91-48-17.compute-1.amazonaws.com)
+[Kyle's deployed portfolio on AWS.](http://ec2-52-91-48-17.compute-1.amazonaws.com)
 
 ## Installation
 
 ### With Docker
 
 * Clone this repository
-* in the command line type: docker-compose up -d
-* in the command line type: docker-compose exec db sh, or you can execute the next command in the termal for the db container from the desktop app
-* in the command line type: psql -U devuser -d devdb -f /tmp/seed.sql
+* In the command line type: docker-compose up -d
+* In the command line type: docker-compose exec db sh, or you can execute the next command in the termal for the db container from the desktop app
+* In the command line, inside the db container, type: psql -U devuser -d devdb -f /tmp/seed.sql
+* In the command line type: docker-compose exec backend sh, or you can execute the next command in the termal for the backend container from the desktop app
+* In the command line, inside the backend container, type: python manage.py createsuperuser.  This will allow you to create an admin user, that you can use to access 127.0.0.1:8000/admin, if you would like to make any changes to the database there.
+* If you have pgAdmin installed, you can connect to the devdb inside the db container from pgAdmin on port 5433 to access the database.
 
 
 ### Without Docker
