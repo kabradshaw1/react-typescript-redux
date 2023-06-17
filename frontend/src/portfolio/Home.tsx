@@ -4,14 +4,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const Home: React.FC = () => {
   const [featured] = useState([
-    // {
-    //   name: 'National Parks Search Engine',
-    //   description: 'This project serves to provide access to the APIs provided by nps.gov.  There is still a little work I would like to do for this project.',
-    //   tech: 'MERN, NoSQL, GraphQL, API, React, MangoDB, Express.js',
-    //   gitub: 'https://github.com/kabradshaw1/National-Parks',
-    //   deployed: 'https://evening-reaches-42082.herokuapp.com/',
-    //   screenshot: 'National-Parks'
-    // },
     {
       name: 'Fitness Tracker',
       description: 'This project displays fitness measurements such as daily max heart rate on a bar graph using the D3.js library.',
@@ -56,16 +48,16 @@ const Home: React.FC = () => {
         my experience with Django and React apps.  </p>
       <Row md={3} sm={1}>
           {featured.map((project)=> (
-            <Card className='m-1 bg-secondary'>
+            <Card key={project.name} className='m-1 bg-secondary'>
               <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} ></Card.Img>
               <Card.Body>
                 <Card.Title><h3>{project.name}</h3></Card.Title>
-                <Card.Text>
+                <div>
                   <Card.Subtitle>Discription</Card.Subtitle>
-                  <Card.Text>{project.description}</Card.Text>
+                  <p>{project.description}</p>
                   <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
-                  <Card.Text>{project.tech}</Card.Text>
-                </Card.Text>
+                  <p>{project.tech}</p>
+                </div>
                 <LinkContainer to={`/${project.deployed}/`}>
                   <Button variant='primary' className='me-1'>Deployed Site</Button>
                 </LinkContainer>
