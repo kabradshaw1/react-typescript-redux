@@ -43,7 +43,8 @@ services:
     environment:
       - REACT_APP_API_URL=${REACT_APP_API_URL}
     ports:
-      - 80:8080
+      - 80:80
+      - 443:443
     volumes:
       - static-data:/var/www/backend
     depends_on:
