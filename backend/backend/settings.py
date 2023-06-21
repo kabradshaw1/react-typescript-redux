@@ -20,8 +20,7 @@ DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
-CORS_ALLOWED_ORIGINS = ['http://kbradshawportfolio.com', 'ec2-52-55-95-47.compute-1.amazonaws.com']
-# os.environ.get('CORS_ALLOWED_ORIGINS').split(',')
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS').split(',')
 
 AUTH_USER_MODEL = 'user.User'
 
