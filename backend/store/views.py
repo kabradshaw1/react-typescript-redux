@@ -3,7 +3,6 @@ from user.models import User
 from .models import Item, Order, Category
 from .serializers import ItemSerializer, OrderSerializer, CategorySerializer, CheckoutSerializer
 from rest_framework import viewsets, status, filters
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import status, permissions
@@ -33,28 +32,29 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-  """View for retrieving urders."""
+  """View for retrieving orders."""
   http_method_names = ['get']
   serializer_class = OrderSerializer
-  permission_classes = [IsAuthenticated]
 
   filter_backends = [filters.OrderingFilter]
   ordering_fields = ['updated']
   ordering = ['-updated']
 
   def get_queryset(self):
+    """Will check to see if user is staff and filter non staff down to their own orders."""
     queryset = Order.objects.all()
 
     if not self.request.user.is_active_staff:
       user_id = self.request.user.id
       queryset = queryset.filter(user=user_id)
-      
+
     return queryset
 
 
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
 def checkout(request):
+  """Create orders."""
   serializer = CheckoutSerializer(data=request.data)
 
   if serializer.is_valid():
