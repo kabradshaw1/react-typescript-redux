@@ -1,3 +1,7 @@
+"""
+URL mapping for the user app.
+"""
+
 from .views import UserViewSet, LoginViewSet, RegistrationViewSet, RefreshViewSet
 from rest_framework.routers import SimpleRouter
 from django.urls import path, include

@@ -1,3 +1,6 @@
+"""
+Djanngo admin customization.
+"""
 from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin
@@ -6,6 +9,7 @@ from django.db import models
 from user.models import User
 
 class UserAdminConfig(UserAdmin):
+    """Define the admin pages for users."""
     model = User
     search_fields = ('email', 'username', 'password',)
     list_filter = ('email', 'id', 'username', 'is_active', 'is_staff')

@@ -1,3 +1,7 @@
+"""
+Serializers for the user API.
+"""
+
 from django.contrib.auth.models import update_last_login
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -32,6 +36,7 @@ class RegisterSerializer(UserSerializer):
 class LoginSerializer(TokenObtainPairSerializer):
 
     def validate(self, attrs):
+        """Validate and authenticate the user."""
         data = super().validate(attrs)
 
         refresh = self.get_token(self.user)
