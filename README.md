@@ -5,7 +5,7 @@ This project is for the purpose of learning about integrating these three techno
 
 ## Deployed Site
 
-[Kyle's deployed portfolio on AWS.](http://ec2-52-91-48-17.compute-1.amazonaws.com)
+[Kyle's deployed portfolio on AWS.](https://kbradshawportfolio.com)
 
 ## Installation
 
