@@ -1,8 +1,5 @@
 from django.db import models
-from django.db.models.manager import Manager
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-
-from store.models import Order
 
 class UserManager(BaseUserManager):
 
@@ -39,9 +36,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id: int
-    orders: Manager['Order']
-
+    """User in the system."""
     username = models.CharField(db_index=True, max_length=20, unique=True)
     email = models.EmailField(db_index=True, unique=True,  null=True, blank=True)
     is_active = models.BooleanField(default=True)
