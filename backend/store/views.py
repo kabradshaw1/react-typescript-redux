@@ -2,41 +2,53 @@ from django.shortcuts import get_object_or_404
 from user.models import User
 from .models import Item, Order, Category
 from .serializers import ItemSerializer, OrderSerializer, CategorySerializer, CheckoutSerializer
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, filters
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import status, permissions
-from rest_framework.request import Request
 
 # import stripe
 
 class CategoryViewSet(viewsets.ModelViewSet):
+  """View for retrieving categories."""
   http_method_names = ['get']
   serializer_class = CategorySerializer
   queryset = Category.objects.all()
 
 class ItemViewSet(viewsets.ModelViewSet):
+  """View for retrieving items."""
   http_method_names = ['get']
   queryset = Item.objects.all()
   serializer_class = ItemSerializer
 
   def get_object(self, queryset=None, **kwargs):
+    """Get a single item by the slug."""
     slug = self.kwargs.get('pk')
     return get_object_or_404(Item, slug=slug)
 
   def get_queryset(self):
+    """Get all items."""
     return Item.objects.all()
 
-class UserRequest(Request):
-  user: User
 
 class OrderViewSet(viewsets.ModelViewSet):
+  """View for retrieving urders."""
   http_method_names = ['get']
   serializer_class = OrderSerializer
+  permission_classes = [IsAuthenticated]
+
+  filter_backends = [filters.OrderingFilter]
+  ordering_fields = ['updated']
+  ordering = ['-updated']
 
   def get_queryset(self):
-    user_id = self.request.user.id
-    queryset = Order.objects.filter(user=user_id)
+    queryset = Order.objects.all()
+
+    if not self.request.user.is_active_staff:
+      user_id = self.request.user.id
+      queryset = queryset.filter(user=user_id)
+      
     return queryset
 
 
