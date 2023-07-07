@@ -34,6 +34,12 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./seed.sql:/tmp/seed.sql
+
 volumes:
   postgres-data:
   static-data:
+
+networks:
+  default:
+    external:
+      name: mynetwork
