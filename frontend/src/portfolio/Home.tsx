@@ -20,6 +20,7 @@ const Home: React.FC = () => {
       deployed: 'store',
       image: 'django.PNG'
     },
+
   ]);
   return (
     <>
@@ -49,7 +50,7 @@ const Home: React.FC = () => {
       <Row md={3} sm={1}>
           {featured.map((project)=> (
             <Card key={project.name} className='m-1 bg-secondary'>
-              <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} ></Card.Img>
+              <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} />
               <Card.Body>
                 <Card.Title><h3>{project.name}</h3></Card.Title>
                 <div>
@@ -59,13 +60,25 @@ const Home: React.FC = () => {
                   <p>{project.tech}</p>
                 </div>
                 <LinkContainer to={`/${project.deployed}/`}>
-                  <Button variant='primary' className='me-1'>Deployed Site</Button>
+                  <Button className='me-1'>Deployed Site</Button>
                 </LinkContainer>
-                <Button variant='primary' href={project.github}>GitHub Repository</Button>
+                <Button href={project.github}>GitHub Repository</Button>
               </Card.Body>
             </Card>
           )
          )}
+        <Card className='m-1 bg-secondary'>
+            <Card.Img className='mt-1' variant='top' src='/images/portfolio/project/tricypaa.png'/>
+            <Card.Body>
+              <Card.Title><h3>TRICYPAA.org</h3></Card.Title>
+              <Card.Subtitle>Discription</Card.Subtitle>
+              <Card.Text>stuff and things</Card.Text>
+              <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
+              <Card.Text>GraphQL, MongoDB, Express, Apollo, NoSQL</Card.Text>
+              <Button className='me-1' href='https://tricypaa.org'>Deployed Site</Button>
+              <Button href='https://github.com/kabradshaw1/node'>GitHub Repository</Button>
+            </Card.Body>
+        </Card>
       </Row>
     </Container>
     </>
