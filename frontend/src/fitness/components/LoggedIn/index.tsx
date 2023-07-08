@@ -10,7 +10,7 @@ import { RootState } from '../../../store';
 const LoggedIn: React.FC = () => {
 
   const currentFitness = useSelector((state: RootState) => state.fitness.value);
-  console.log(currentFitness)
+  
   const {data: qty, error, isLoading } = useSWR<Data[]>(`/fitness/${currentFitness}/`, fetcher);
 
   if(error) return <Container><h3>Failed to load.</h3></Container>
