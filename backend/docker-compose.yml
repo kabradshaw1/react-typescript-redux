@@ -4,10 +4,10 @@ services:
   backend:
     build:
       context: .
+      # This command is currently removed because I need to figure out why it was causing problems and how to get the static files to get servered properly by nginx. python manage.py collectstatic --no-input &&
     command: >
       sh -c "python manage.py wait_for_db &&
              python manage.py migrate &&
-             python manage.py collectstatic --no-input &&
              gunicorn backend.wsgi --bind 0.0.0.0:8000"
     ports:
       - "8000:8000"
