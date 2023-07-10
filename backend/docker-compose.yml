@@ -21,8 +21,8 @@ services:
       - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS}
     depends_on:
       - db
-    volumes:
-      - static-data:/backend/static
+    # volumes:
+    #   - static-data:/backend/static
 
   db:
     image: postgres:14-alpine
@@ -37,7 +37,7 @@ services:
 
 volumes:
   postgres-data:
-  static-data:
+  # static-data:
 
 networks:
   default:
