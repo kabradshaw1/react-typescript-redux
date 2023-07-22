@@ -23,7 +23,6 @@ const StoreHeader: React.FC = () => {
   return (
     <Navbar bg='light' expand="lg" className='sticky-top subheader'>
       <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Nav className="ms-auto">
             <LinkContainer to='/store'>
               <Navbar.Brand>Store</Navbar.Brand>

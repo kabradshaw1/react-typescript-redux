@@ -49,8 +49,6 @@ export default function Header() {
               <LinkContainer to=''>
                 <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>
               </LinkContainer>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
                 <Nav className="me-auto">
                   {isLoggedIn
                     ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
@@ -75,7 +73,6 @@ export default function Header() {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
-
             </Container>
           </Navbar>
         </Col>

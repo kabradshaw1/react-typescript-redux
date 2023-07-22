@@ -1,10 +1,10 @@
-INSERT INTO store_category (name)
+INSERT INTO store_category (id, name)
 VALUES
-  ('Food'),
-  ('Household Supplies'),
-  ('Electronics'),
-  ('Books'),
-  ('Toys');
+  (1, 'Food'),
+  (2, 'Household Supplies'),
+  (3, 'Electronics'),
+  (4, 'Books'),
+  (5, 'Toys');
 
 INSERT INTO store_item (id, name, slug, price, image, description, quantity, created, updated, category_id)
 VALUES
