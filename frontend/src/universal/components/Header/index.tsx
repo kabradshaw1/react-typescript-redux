@@ -42,38 +42,36 @@ export default function Header() {
 
   return (
     <Container fluid className='sticky-top header' as='header'>
-      <Row className="g-0">
+      <Row lg={2} md={1} className="g-0">
         <Col>
-          <Navbar bg="light" expand="lg" >
-            <Container>
-              <LinkContainer to=''>
-                <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>
-              </LinkContainer>
-                <Nav className="me-auto">
-                  {isLoggedIn
-                    ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                    : <LinkContainer to='/login'>
-                        <Nav.Link>Login</Nav.Link>
-                      </LinkContainer>
-                  }
-                  <LinkContainer to='register'>
-                    <Nav.Link>Register</Nav.Link>
+          <Navbar bg="light"  >
+            <LinkContainer to=''>
+              <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>
+            </LinkContainer>
+            <Nav className="me-auto">
+              {isLoggedIn
+                ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                : <LinkContainer to='/login'>
+                    <Nav.Link>Login</Nav.Link>
                   </LinkContainer>
-                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <LinkContainer to='/order_completed'>
-                      <NavDropdown.Item>Order History</NavDropdown.Item>
-                    </LinkContainer>
-                    <NavDropdown.Item href="#action/3.2">
-                      Free Space
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                      Fill Me!
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-            </Container>
+              }
+              <LinkContainer to='register'>
+                <Nav.Link>Register</Nav.Link>
+              </LinkContainer>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <LinkContainer to='/order_completed'>
+                  <NavDropdown.Item>Order History</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item href="#action/3.2">
+                  Free Space
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Fill Me!
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
           </Navbar>
         </Col>
         <Col>

@@ -21,7 +21,7 @@ const StoreHeader: React.FC = () => {
   };
 
   return (
-    <Navbar bg='light' expand="lg" className='sticky-top subheader'>
+    <Navbar bg='light' className='sticky-top subheader'>
       <Container>
           <Nav className="ms-auto">
             <LinkContainer to='/store'>
