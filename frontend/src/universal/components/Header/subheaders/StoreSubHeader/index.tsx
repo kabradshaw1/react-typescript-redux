@@ -22,16 +22,17 @@ const StoreHeader: React.FC = () => {
 
   return (
     <Navbar bg='light' className='sticky-top subheader'>
-      <Container fluid>
-
-            <LinkContainer to='/store'>
-              <Navbar.Brand>Store</Navbar.Brand>
-            </LinkContainer>
+      <Container>
+          <LinkContainer to='/store'>
+            <Navbar.Brand>Store</Navbar.Brand>
+          </LinkContainer>
+          <Nav className="ms-auto">
             {isLoggedIn
               ? <LinkContainer to='/checkout'>
                   <Nav.Link>Checkout <AiOutlineShoppingCart/>: {getCartQauntity() | 0} </Nav.Link>
                 </LinkContainer>: null
             }
+          </Nav>
       </Container>
     </Navbar>
   )
