@@ -54,36 +54,40 @@ const Home: React.FC = () => {
         my experience with Django and React apps.  </p>
       <Row md={3} sm={1}>
           {featured.map((project)=> (
-            <Card key={project.name} className='m-1 bg-secondary'>
-              <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} />
-              <Card.Body>
-                <Card.Title><h3>{project.name}</h3></Card.Title>
-                <div>
-                  <Card.Subtitle>Discription</Card.Subtitle>
-                  <p>{project.description}</p>
-                  <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
-                  <p>{project.tech}</p>
-                </div>
-                <LinkContainer to={`/${project.deployed}/`}>
-                  <Button className='me-1'>Deployed Site</Button>
-                </LinkContainer>
-                <Button href={project.github}>GitHub Repository</Button>
-              </Card.Body>
-            </Card>
+            <Col sm={12} md={6}>
+              <Card key={project.name} className='m-1 bg-secondary'>
+                <Card.Img className='mt-1' variant='top' src={`/images/portfolio/project/${project.image}`} />
+                <Card.Body>
+                  <Card.Title><h3>{project.name}</h3></Card.Title>
+                  <div>
+                    <Card.Subtitle>Discription</Card.Subtitle>
+                    <p>{project.description}</p>
+                    <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
+                    <p>{project.tech}</p>
+                  </div>
+                  <LinkContainer to={`/${project.deployed}/`}>
+                    <Button className='me-1'>Deployed Site</Button>
+                  </LinkContainer>
+                  <Button href={project.github}>GitHub Repository</Button>
+                </Card.Body>
+              </Card>
+            </Col>
           )
          )}
-        <Card className='m-1 bg-secondary'>
-            <Card.Img className='mt-1' variant='top' src='/images/portfolio/project/tricypaa.png'/>
-            <Card.Body>
-              <Card.Title><h3>TRICYPAA.org</h3></Card.Title>
-              <Card.Subtitle>Discription</Card.Subtitle>
-              <Card.Text>stuff and things</Card.Text>
-              <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
-              <Card.Text>GraphQL, MongoDB, Express, Apollo, NoSQL</Card.Text>
-              <Button className='me-1' href='https://tricypaa.org'>Deployed Site</Button>
-              <Button href='https://github.com/kabradshaw1/node'>GitHub Repository</Button>
-            </Card.Body>
-        </Card>
+        <Col sm={12} md={6}>
+          <Card className='m-1 bg-secondary'>
+              <Card.Img className='mt-1' variant='top' src='/images/portfolio/project/tricypaa.png'/>
+              <Card.Body>
+                <Card.Title><h3>TRICYPAA.org</h3></Card.Title>
+                <Card.Subtitle>Discription</Card.Subtitle>
+                <Card.Text>stuff and things</Card.Text>
+                <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
+                <Card.Text>GraphQL, MongoDB, Express, Apollo, NoSQL</Card.Text>
+                <Button className='me-1' href='https://tricypaa.org'>Deployed Site</Button>
+                <Button href='https://github.com/kabradshaw1/node'>GitHub Repository</Button>
+              </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </Container>
     </>

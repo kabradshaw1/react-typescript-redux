@@ -22,8 +22,8 @@ const StoreHeader: React.FC = () => {
 
   return (
     <Navbar bg='light' className='sticky-top subheader'>
-      <Container>
-          <Nav className="ms-auto">
+      <Container fluid>
+
             <LinkContainer to='/store'>
               <Navbar.Brand>Store</Navbar.Brand>
             </LinkContainer>
@@ -32,7 +32,6 @@ const StoreHeader: React.FC = () => {
                   <Nav.Link>Checkout <AiOutlineShoppingCart/>: {getCartQauntity() | 0} </Nav.Link>
                 </LinkContainer>: null
             }
-          </Nav>
       </Container>
     </Navbar>
   )

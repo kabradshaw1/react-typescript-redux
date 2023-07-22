@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 const PortfolioHeader: React.FC = () => {
   return (
     <Navbar as='header' bg='light' expand="lg" className='sticky-top subheader'>
-      <Container>
+      <Container fluid>
         <LinkContainer to=''>
           <Navbar.Brand>Bio & Project Links</Navbar.Brand>
         </LinkContainer>

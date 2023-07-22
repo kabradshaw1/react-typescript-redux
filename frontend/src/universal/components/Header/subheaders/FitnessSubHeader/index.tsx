@@ -15,8 +15,8 @@ const FitnessHeader: React.FC = () => {
   const isLoggedIn = useSelector((state: RootState) => state.auth.account);
 
   return (
-    <Navbar as='header' bg='light' expand="lg" className='sticky-top subheader'>
-      <Container>
+    <Navbar bg='light' className='sticky-top subheader'>
+      <Container fluid>
           <LinkContainer to=''>
             <Navbar.Brand>Fitness</Navbar.Brand>
           </LinkContainer>
