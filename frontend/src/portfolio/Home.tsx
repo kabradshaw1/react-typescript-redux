@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Button, Card, Col } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -25,8 +25,8 @@ const Home: React.FC = () => {
   return (
     <>
     <Container>
-    <Row sm={1} md={2}>
-      <Col>
+    <Row>
+      <Col sm={12} md={6}>
         <Card>
           <Card.Img  src={`/images/portfolio/profile.JPG`}/>
         </Card>

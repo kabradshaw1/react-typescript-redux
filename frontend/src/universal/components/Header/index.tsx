@@ -50,7 +50,7 @@ export default function Header() {
                 <Navbar.Brand>Kyle's Portfolio</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
+
                 <Nav className="me-auto">
                   {isLoggedIn
                     ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
@@ -75,7 +75,7 @@ export default function Header() {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
-              </Navbar.Collapse>
+
             </Container>
           </Navbar>
         </Col>

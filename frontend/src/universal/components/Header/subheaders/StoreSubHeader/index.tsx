@@ -24,7 +24,6 @@ const StoreHeader: React.FC = () => {
     <Navbar bg='light' expand="lg" className='sticky-top subheader'>
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <LinkContainer to='/store'>
               <Navbar.Brand>Store</Navbar.Brand>
@@ -35,7 +34,6 @@ const StoreHeader: React.FC = () => {
                 </LinkContainer>: null
             }
           </Nav>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
   )
