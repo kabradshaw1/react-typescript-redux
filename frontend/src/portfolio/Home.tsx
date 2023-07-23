@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   const [featured] = useState([
     {
       name: 'Fitness Tracker',
-      description: 'This project displays fitness measurements such as daily max heart rate on a bar graph using the D3.js library.',
+      description: 'A health-oriented application aimed at helping users track their daily fitness activities such as heart rate, steps taken, active energy, and weight measurements. The app provides graphical data representation for easy tracking and analysis.',
       tech: 'Django, React, d3.js, TypeScript, Jest Testing',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'fitness',
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     },
     {
       name: 'Kyle\'s Store',
-      description: 'This application lays the ground work for a fully functional ecommerce site.  ',
+      description: 'A comprehensive mock e-commerce application that facilitates user authentication, shopping cart functionality, and order processing. The application also securely stores mock purchases in a database, exemplifying areal-world online retail scenario.',
       tech: 'React, TypeScript, PostgreSQL, Django, Axios, Django Restframework, React-Hook-Form, Yup',
       github: 'https://github.com/kabradshaw1/react-typescript-redux',
       deployed: 'store',
@@ -80,7 +80,8 @@ const Home: React.FC = () => {
               <Card.Body>
                 <Card.Title><h3>TRICYPAA.org</h3></Card.Title>
                 <Card.Subtitle>Discription</Card.Subtitle>
-                <Card.Text>stuff and things</Card.Text>
+                <Card.Text>A community-oriented web application serving as a digital platform for discussion and event updates for
+                  TRICYPAA. The application offers an exclusive admin portal for managing upcoming events</Card.Text>
                 <Card.Subtitle>Technologies and Concepts</Card.Subtitle>
                 <Card.Text>GraphQL, MongoDB, Express, Apollo, NoSQL</Card.Text>
                 <Button className='me-1' href='https://tricypaa.org'>Deployed Site</Button>

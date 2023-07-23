@@ -18,6 +18,8 @@ services:
       - DB_USER=devuser
       - DB_PASS=changeme
       - SECRET_KEY=changeme
+      - ALLOWED_HOSTS=127.0.0.1
+      - CORS_ALLOWED_ORIGINS=http://localhost:3000
       - DEBUG=1
     depends_on:
       - db
@@ -46,7 +48,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_DJ_API_URL=http://127.0.0.1/api
+      - REACT_APP_DJ_API_URL=http://127.0.0.1:8000/api
       - WATCHPACK_POLLING=500
 
 volumes:

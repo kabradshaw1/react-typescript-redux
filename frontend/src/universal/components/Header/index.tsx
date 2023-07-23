@@ -58,19 +58,6 @@ export default function Header() {
               <LinkContainer to='register'>
                 <Nav.Link>Register</Nav.Link>
               </LinkContainer>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <LinkContainer to='/order_completed'>
-                  <NavDropdown.Item>Order History</NavDropdown.Item>
-                </LinkContainer>
-                <NavDropdown.Item href="#action/3.2">
-                  Free Space
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Fill Me!
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
           </Navbar>
         </Col>
