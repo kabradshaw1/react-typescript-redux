@@ -18,7 +18,7 @@ const AllItems: React.FC = () => {
       <Row lg={3} sm={1} xl={4}>
       {items && items.map((item) => {
           return (
-            <Col key={item.id}>
+            <Col sm={12} md={6} key={item.id}>
               <ItemCard
                 slug={item.slug}
                 quantity={item.quantity}
